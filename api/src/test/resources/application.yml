@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: test
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost/~/test;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password: 1234
+      driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  sql:
+    init:
+      mode: always # Spring Boot >=v2.5.0
+
+  security:
+    user:
+      name: user
+      password: 1234
+
+
+  # 스웨거 설정
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+---
+auth:
+  allowIp: 127.8.8.8,1.2.3.4,127.0.0.1
+---
+slack:
+  token: xoxb-3971347691442-4482065644323-CmhiHVZfCblWzhEeDq0GOTtk
+  channel:
+    monitor: '#web-monitor'
+
+# graceful shutdown (immediate 옵션도 존재하는 해당 옵션은 디폴트이며 말 그대로 즉시 종료이다.)
+server:
+  shutdown: graceful

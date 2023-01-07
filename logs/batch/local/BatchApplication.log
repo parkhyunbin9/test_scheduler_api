@@ -1,0 +1,631 @@
+[2023-01-08 03:24:16]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 87156 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:24:17]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:24:17]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:24:17]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 28 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:24:18]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:24:18]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:24:18]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:24:18]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:24:18]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:24:18]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:24:19]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:24:19]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:24:19]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:24:19]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:24:19]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:24:20]-[INFO ]-[logStarted]-Started BatchApplication in 3.484 seconds (JVM running for 3.683)
+[2023-01-08 03:24:20]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:24:26]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'HourlySummaryreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:24:27]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'DailySummaryJobreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:24:27]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'CleanHourlyDatareader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:24:27]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:24:27]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:24:27]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 03:25:41]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 87298 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:25:42]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:25:42]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:25:42]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 26 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:25:42]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:25:42]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:25:43]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:25:43]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:25:43]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:25:43]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:25:43]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:25:44]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:25:44]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:25:44]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:25:44]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:25:44]-[INFO ]-[logStarted]-Started BatchApplication in 3.573 seconds (JVM running for 3.777)
+[2023-01-08 03:25:44]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:26:00]-[ERROR]-[runJob]-Job 수행중 에러 발생 
+org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for parameters={batchDate=2022-12-30}.  If you want to run this job again, change the parameters.
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:139)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy92.createJobExecution(Unknown Source)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 03:26:00]-[INFO ]-[postSlackMessage]-배치 스케줄 진행 중 에러 발생 배치 동작 일 = 2023-01-08
+[2023-01-08 03:26:00]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:26:01]-[INFO ]-[postSlackMessage]-에러 메세지 = A job instance already exists and is complete for parameters={batchDate=2022-12-30}.  If you want to run this job again, change the parameters.
+[2023-01-08 03:26:01]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:26:01]-[INFO ]-[postSlackMessage]-에러 StackTrace = [org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:139), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), java.base/java.lang.reflect.Method.invoke(Method.java:566), org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344), org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198), org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163), org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123), org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388), org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119), org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186), org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181), org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186), org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215), com.sun.proxy.$Proxy92.createJobExecution(Unknown Source), org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), java.base/java.lang.reflect.Method.invoke(Method.java:566), org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344), org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198), org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163), org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128), org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186), org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215), com.sun.proxy.$Proxy94.run(Unknown Source), com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), java.base/java.lang.reflect.Method.invoke(Method.java:566), org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84), org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54), org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95), java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515), java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264), java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304), java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128), java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628), java.base/java.lang.Thread.run(Thread.java:829)]
+[2023-01-08 03:26:01]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:26:01]-[INFO ]-[postSlackMessage]-2023-01-08 작업이 종료되었습니다.
+[2023-01-08 03:26:02]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:26:12]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'HourlySummaryreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:26:12]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'DailySummaryJobreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:26:12]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'CleanHourlyDatareader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:26:12]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:26:12]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:26:12]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 03:26:41]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 87403 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:26:41]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:26:42]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:26:42]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:26:42]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:26:42]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:26:42]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:26:43]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:26:43]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:26:43]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:26:43]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:26:43]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:26:44]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:26:44]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:26:44]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:26:44]-[INFO ]-[logStarted]-Started BatchApplication in 3.29 seconds (JVM running for 3.475)
+[2023-01-08 03:26:44]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:28:00]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] launched with the following parameters: [{batchDate=2022-12-29}]
+[2023-01-08 03:28:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathCSV2023-01-08]
+[2023-01-08 03:28:00]-[INFO ]-[execute]-Step: [getFileStepByPathCSV2023-01-08] executed in 36ms
+[2023-01-08 03:28:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathPIPETEXT2023-01-08]
+[2023-01-08 03:28:00]-[INFO ]-[execute]-Step: [getFileStepByPathPIPETEXT2023-01-08] executed in 8ms
+[2023-01-08 03:28:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathSLASHTEXT2023-01-08]
+[2023-01-08 03:28:00]-[INFO ]-[execute]-Step: [getFileStepByPathSLASHTEXT2023-01-08] executed in 11ms
+[2023-01-08 03:28:00]-[INFO ]-[handleStep]-Executing step: [zipOriginFile2023-01-08]
+[2023-01-08 03:28:00]-[INFO ]-[zipOriginFile]-/Users/phb/Desktop/test_scheduler_api/src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:28:00]-[INFO ]-[zipOriginFile]-src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:28:01]-[ERROR]-[zipOriginFile]-압축중 에러 발생
+java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:39)
+	at com.daou.batch.job.LoadFileAndSaveConfiguration.lambda$zipOriginFile$0(LoadFileAndSaveConfiguration.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:68)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:68)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 03:28:01]-[ERROR]-[execute]-Encountered an error executing step zipOriginFile2023-01-08 in job loadFileAndSave
+java.lang.RuntimeException: java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:57)
+	at com.daou.batch.job.LoadFileAndSaveConfiguration.lambda$zipOriginFile$0(LoadFileAndSaveConfiguration.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:68)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:68)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:39)
+	... 46 common frames omitted
+[2023-01-08 03:28:01]-[INFO ]-[execute]-Step: [zipOriginFile2023-01-08] executed in 375ms
+[2023-01-08 03:28:01]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] completed with the following parameters: [{batchDate=2022-12-29}] and the following status: [FAILED] in 1s129ms
+[2023-01-08 03:28:01]-[WARN ]-[runJob]->>>>>> STATUS = loadFileAndSave exitCode=FAILED;exitDescription=
+[2023-01-08 03:28:01]-[ERROR]-[runJob]->>>>>> ERROR!!!!
+[2023-01-08 03:28:01]-[INFO ]-[run]-Job: [FlowJob: [name=RollbackProcess]] launched with the following parameters: [{batchDate=2022-12-29}]
+[2023-01-08 03:28:01]-[INFO ]-[handleStep]-Executing step: [rollbackRowData2022-12-29]
+[2023-01-08 03:28:01]-[INFO ]-[postSlackMessage]-스케줄 배치 RowData 롤백 수행 요청!
+[2023-01-08 03:28:02]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:28:02]-[INFO ]-[execute]-Step: [rollbackRowData2022-12-29] executed in 997ms
+[2023-01-08 03:28:02]-[ERROR]-[execute]-Encountered fatal error executing job
+org.springframework.batch.core.JobExecutionException: Flow execution ended unexpectedly
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:145)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.springframework.batch.core.job.flow.FlowExecutionException: Next state not found in flow=RollbackProcess for state=RollbackProcess.step0 with exit status=COMPLETED
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.nextState(SimpleFlow.java:233)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:186)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	... 29 common frames omitted
+[2023-01-08 03:28:02]-[INFO ]-[run]-Job: [FlowJob: [name=RollbackProcess]] completed with the following parameters: [{batchDate=2022-12-29}] and the following status: [FAILED] in 1s286ms
+[2023-01-08 03:28:03]-[ERROR]-[runJob]-배치 에러 발생 
+java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 03:28:03]-[INFO ]-[postSlackMessage]-배치 스케줄 진행 중 에러 발생 배치 동작 일 = 2023-01-08
+[2023-01-08 03:28:03]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:28:03]-[INFO ]-[postSlackMessage]-에러 메세지 = 스케줄 배치 에러로 인한 중단
+[2023-01-08 03:28:03]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:28:03]-[INFO ]-[postSlackMessage]-에러 StackTrace = [com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), java.base/java.lang.reflect.Method.invoke(Method.java:566), org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84), org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54), org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95), java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515), java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264), java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304), java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128), java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628), java.base/java.lang.Thread.run(Thread.java:829)]
+[2023-01-08 03:28:04]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:28:04]-[ERROR]-[handleError]-Unexpected error occurred in scheduled task
+java.lang.RuntimeException: java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69)
+	... 13 common frames omitted
+[2023-01-08 03:28:32]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'HourlySummaryreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:28:32]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'DailySummaryJobreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:28:32]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'CleanHourlyDatareader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:28:32]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:28:32]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:28:32]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 03:40:12]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 89338 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:40:12]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:40:12]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:40:13]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 28 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:40:13]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:40:13]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:40:13]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:40:13]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:40:13]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:40:14]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:40:14]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:40:14]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:40:15]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:40:15]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:40:15]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:40:15]-[INFO ]-[logStarted]-Started BatchApplication in 3.332 seconds (JVM running for 3.518)
+[2023-01-08 03:40:15]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:42:00]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] launched with the following parameters: [{batchDate=2022-12-28}]
+[2023-01-08 03:42:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathCSV2023-01-08]
+[2023-01-08 03:42:00]-[INFO ]-[execute]-Step: [getFileStepByPathCSV2023-01-08] executed in 40ms
+[2023-01-08 03:42:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathPIPETEXT2023-01-08]
+[2023-01-08 03:42:00]-[INFO ]-[execute]-Step: [getFileStepByPathPIPETEXT2023-01-08] executed in 8ms
+[2023-01-08 03:42:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathSLASHTEXT2023-01-08]
+[2023-01-08 03:42:00]-[INFO ]-[execute]-Step: [getFileStepByPathSLASHTEXT2023-01-08] executed in 13ms
+[2023-01-08 03:42:00]-[INFO ]-[handleStep]-Executing step: [zipOriginFile2023-01-08]
+[2023-01-08 03:42:00]-[INFO ]-[zipOriginFile]-/Users/phb/Desktop/test_scheduler_api/src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:42:00]-[INFO ]-[zipOriginFile]-src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:42:01]-[ERROR]-[zipOriginFile]-압축중 에러 발생
+java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:39)
+	at com.daou.batch.job.LoadFileAndSaveConfiguration.lambda$zipOriginFile$0(LoadFileAndSaveConfiguration.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:68)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:68)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 03:42:01]-[ERROR]-[execute]-Encountered an error executing step zipOriginFile2023-01-08 in job loadFileAndSave
+java.lang.RuntimeException: java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:57)
+	at com.daou.batch.job.LoadFileAndSaveConfiguration.lambda$zipOriginFile$0(LoadFileAndSaveConfiguration.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273)
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82)
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375)
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215)
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:68)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:68)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.FileNotFoundException: src/main/resources/data/success/2023-01-08.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at com.daou.batch.common.utils.FileManager.zipOriginFile(FileManager.java:39)
+	... 46 common frames omitted
+[2023-01-08 03:42:01]-[INFO ]-[execute]-Step: [zipOriginFile2023-01-08] executed in 357ms
+[2023-01-08 03:42:01]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] completed with the following parameters: [{batchDate=2022-12-28}] and the following status: [FAILED] in 1s127ms
+[2023-01-08 03:42:01]-[WARN ]-[runJob]->>>>>> STATUS = loadFileAndSave exitCode=FAILED;exitDescription=
+[2023-01-08 03:42:01]-[ERROR]-[runJob]->>>>>> ERROR!!!!
+[2023-01-08 03:42:01]-[INFO ]-[run]-Job: [FlowJob: [name=RollbackProcess]] launched with the following parameters: [{batchDate=2022-12-28}]
+[2023-01-08 03:42:01]-[INFO ]-[handleStep]-Executing step: [rollbackRowData2022-12-28]
+[2023-01-08 03:42:01]-[INFO ]-[postSlackMessage]-스케줄 배치 RowData 롤백 수행 요청!
+[2023-01-08 03:42:02]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:42:02]-[INFO ]-[execute]-Step: [rollbackRowData2022-12-28] executed in 965ms
+[2023-01-08 03:42:02]-[ERROR]-[execute]-Encountered fatal error executing job
+org.springframework.batch.core.JobExecutionException: Flow execution ended unexpectedly
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:145)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy94.run(Unknown Source)
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.springframework.batch.core.job.flow.FlowExecutionException: Next state not found in flow=RollbackProcess for state=RollbackProcess.step0 with exit status=COMPLETED
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.nextState(SimpleFlow.java:233)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:186)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	... 29 common frames omitted
+[2023-01-08 03:42:02]-[INFO ]-[run]-Job: [FlowJob: [name=RollbackProcess]] completed with the following parameters: [{batchDate=2022-12-28}] and the following status: [FAILED] in 1s254ms
+[2023-01-08 03:42:02]-[ERROR]-[runJob]-배치 에러 발생 
+java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 03:42:03]-[INFO ]-[postSlackMessage]-배치 스케줄 진행 중 에러 발생 배치 동작 일 = 2023-01-08
+[2023-01-08 03:42:03]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:42:03]-[INFO ]-[postSlackMessage]-에러 메세지 = 스케줄 배치 에러로 인한 중단
+[2023-01-08 03:42:03]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:42:03]-[INFO ]-[postSlackMessage]-에러 StackTrace = [com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), java.base/java.lang.reflect.Method.invoke(Method.java:566), org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84), org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54), org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95), java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515), java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264), java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304), java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128), java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628), java.base/java.lang.Thread.run(Thread.java:829)]
+[2023-01-08 03:42:04]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:42:04]-[ERROR]-[handleError]-Unexpected error occurred in scheduled task
+java.lang.RuntimeException: java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: 스케줄 배치 에러로 인한 중단
+	at com.daou.batch.BatchScheduler.runJob(BatchScheduler.java:69)
+	... 13 common frames omitted
+[2023-01-08 03:42:33]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'HourlySummaryreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:42:33]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'DailySummaryJobreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:42:33]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'CleanHourlyDatareader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:42:33]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:42:33]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:42:33]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 03:44:32]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 89780 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:44:33]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:44:33]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:44:33]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 34 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:44:33]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:44:34]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:44:34]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:44:34]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:44:34]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:44:34]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:44:35]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:44:35]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:44:35]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:44:35]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:44:35]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:44:36]-[INFO ]-[logStarted]-Started BatchApplication in 3.645 seconds (JVM running for 3.847)
+[2023-01-08 03:44:36]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:44:37]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'HourlySummaryreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:44:37]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'DailySummaryJobreader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:44:37]-[WARN ]-[invokeCustomDestroyMethod]-Custom destroy method 'close' on bean with name 'CleanHourlyDatareader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+[2023-01-08 03:44:37]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:44:37]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:44:37]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 03:44:39]-[INFO ]-[logStarting]-Starting BatchApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 89801 (/Users/phb/Desktop/test_scheduler_api/batch/build/classes/java/main started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 03:44:39]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 03:44:40]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 03:44:40]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
+[2023-01-08 03:44:40]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 03:44:40]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 03:44:40]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 03:44:41]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 03:44:41]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 03:44:41]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 03:44:41]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 03:44:41]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:44:42]-[WARN ]-[determineIsolationLevel]-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+[2023-01-08 03:44:42]-[INFO ]-[afterPropertiesSet]-No database type set, using meta data indicating: H2
+[2023-01-08 03:44:42]-[INFO ]-[afterPropertiesSet]-No TaskExecutor has been set, defaulting to synchronous executor.
+[2023-01-08 03:44:42]-[INFO ]-[logStarted]-Started BatchApplication in 3.3 seconds (JVM running for 3.491)
+[2023-01-08 03:44:42]-[INFO ]-[run]-Running default command line with: []
+[2023-01-08 03:46:00]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] launched with the following parameters: [{batchDate=2022-12-27}]
+[2023-01-08 03:46:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathCSV2023-01-08]
+[2023-01-08 03:46:00]-[INFO ]-[execute]-Step: [getFileStepByPathCSV2023-01-08] executed in 39ms
+[2023-01-08 03:46:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathPIPETEXT2023-01-08]
+[2023-01-08 03:46:00]-[INFO ]-[execute]-Step: [getFileStepByPathPIPETEXT2023-01-08] executed in 7ms
+[2023-01-08 03:46:00]-[INFO ]-[handleStep]-Executing step: [getFileStepByPathSLASHTEXT2023-01-08]
+[2023-01-08 03:46:00]-[INFO ]-[execute]-Step: [getFileStepByPathSLASHTEXT2023-01-08] executed in 14ms
+[2023-01-08 03:46:00]-[INFO ]-[handleStep]-Executing step: [zipOriginFile2023-01-08]
+[2023-01-08 03:46:00]-[INFO ]-[zipOriginFile]-/Users/phb/Desktop/test_scheduler_api/batch/src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:46:00]-[INFO ]-[zipOriginFile]-batch/src/main/resources/data/success/2023-01-08.zip
+[2023-01-08 03:46:01]-[INFO ]-[execute]-Step: [zipOriginFile2023-01-08] executed in 178ms
+[2023-01-08 03:46:01]-[INFO ]-[handleStep]-Executing step: [deleteOriginFile2023-01-08]
+[2023-01-08 03:46:01]-[INFO ]-[execute]-Step: [deleteOriginFile2023-01-08] executed in 11ms
+[2023-01-08 03:46:01]-[INFO ]-[run]-Job: [FlowJob: [name=loadFileAndSave]] completed with the following parameters: [{batchDate=2022-12-27}] and the following status: [COMPLETED] in 1s129ms
+[2023-01-08 03:46:01]-[WARN ]-[runJob]->>>>>> STATUS = loadFileAndSave exitCode=COMPLETED;exitDescription=
+[2023-01-08 03:46:01]-[INFO ]-[run]-Job: [FlowJob: [name=CleanHourlyData]] launched with the following parameters: [{batchDate=2022-12-27}]
+[2023-01-08 03:46:01]-[INFO ]-[handleStep]-Executing step: [CleanHourlyData]
+[2023-01-08 03:46:01]-[INFO ]-[execute]-Step: [CleanHourlyData] executed in 81ms
+[2023-01-08 03:46:01]-[INFO ]-[run]-Job: [FlowJob: [name=CleanHourlyData]] completed with the following parameters: [{batchDate=2022-12-27}] and the following status: [COMPLETED] in 267ms
+[2023-01-08 03:46:01]-[WARN ]-[runJob]->>>>>> STATUS = CleanHourlyData exitCode=COMPLETED;exitDescription=
+[2023-01-08 03:46:01]-[INFO ]-[run]-Job: [FlowJob: [name=HourlySummary]] launched with the following parameters: [{batchDate=2022-12-27}]
+[2023-01-08 03:46:02]-[INFO ]-[handleStep]-Executing step: [HourlySummary]
+[2023-01-08 03:46:02]-[INFO ]-[execute]-Step: [HourlySummary] executed in 23ms
+[2023-01-08 03:46:02]-[INFO ]-[run]-Job: [FlowJob: [name=HourlySummary]] completed with the following parameters: [{batchDate=2022-12-27}] and the following status: [COMPLETED] in 198ms
+[2023-01-08 03:46:02]-[WARN ]-[runJob]->>>>>> STATUS = HourlySummary exitCode=COMPLETED;exitDescription=
+[2023-01-08 03:46:02]-[INFO ]-[run]-Job: [FlowJob: [name=DailySummaryJob]] launched with the following parameters: [{batchDate=2022-12-27}]
+[2023-01-08 03:46:02]-[INFO ]-[handleStep]-Executing step: [DailySummaryJob]
+[2023-01-08 03:46:02]-[INFO ]-[execute]-Step: [DailySummaryJob] executed in 14ms
+[2023-01-08 03:46:02]-[INFO ]-[run]-Job: [FlowJob: [name=DailySummaryJob]] completed with the following parameters: [{batchDate=2022-12-27}] and the following status: [COMPLETED] in 186ms
+[2023-01-08 03:46:02]-[WARN ]-[runJob]->>>>>> STATUS = DailySummaryJob exitCode=COMPLETED;exitDescription=
+[2023-01-08 03:46:02]-[INFO ]-[postSlackMessage]-2023-01-08 작업이 종료되었습니다.
+[2023-01-08 03:46:03]-[INFO ]-[postSlackMessage]-보냄
+[2023-01-08 03:46:15]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 03:46:15]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 03:46:15]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.

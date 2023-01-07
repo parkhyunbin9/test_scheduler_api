@@ -1,0 +1,60 @@
+spring:
+  config:
+    activate:
+      on-profile: real
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:tcp://localhost/~/test;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password: 1234
+      driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: true
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+
+  security:
+    user:
+      name: user
+      password: 1234
+
+
+  # 스웨거 설정
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+auth:
+  allowIp: 127.8.8.8,1.2.3.4,127.0.0.1
+
+logging:
+  logback:
+    rollingpolicy:
+      max-history: 30
+      max-file-size: 100MB
+    path: "./logs/api/real"
+  level:
+    root: error
+  slack:
+    webhook-uri: https://hooks.slack.com/services/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
+  config:
+    classpath: logback-spring.xml
+
+slack:
+  token: xoxb-3971347691442-4482065644323-CmhiHVZfCblWzhEeDq0GOTtk
+  channel:
+    monitor: '#web-monitor'
+
+server:
+  shutdown: graceful
+
+jwt:
+  secret-key: ZGFvdS10ZXN0LWp3dC1hdXRoZW50aWZpY2F0aW9uLXVzZXItb25seS1wYXNzLWF1dGgtcGxlYXNlLWdvLXdsbC1wbGVhc2UtMjM1aHMK
+
