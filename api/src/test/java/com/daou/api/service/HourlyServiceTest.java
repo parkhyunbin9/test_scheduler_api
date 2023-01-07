@@ -74,7 +74,7 @@ class HourlyServiceTest {
 
 	@Nested
 	@DisplayName("시간별 데이터 시간 조회")
-	class SearchHourlyDataByHour{
+	class SearchHourlyDataByHour {
 
 		@DisplayName("신규유저 조회")
 		@Test
@@ -162,7 +162,7 @@ class HourlyServiceTest {
 
 	@Nested
 	@DisplayName("시간별 데이터 시간범위 조회")
-	class SearchHourlyDataByHourRange{
+	class SearchHourlyDataByHourRange {
 
 		@DisplayName("신규유저 조회")
 		@Test
@@ -191,7 +191,8 @@ class HourlyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<HourlyResponseDto.HourlyChurnUser> HourRangeResult = service.getHourlyChurnUser(hourRangeCond, pageable);
+			Page<HourlyResponseDto.HourlyChurnUser> HourRangeResult = service.getHourlyChurnUser(hourRangeCond,
+				pageable);
 
 			//then
 			assertThat(HourRangeResult.getTotalElements()).isEqualTo(rangeHourCount);
@@ -208,7 +209,8 @@ class HourlyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<HourlyResponseDto.HourlyPayAmount> HourRangeResult = service.getHourlyPayAmount(hourRangeCond, pageable);
+			Page<HourlyResponseDto.HourlyPayAmount> HourRangeResult = service.getHourlyPayAmount(hourRangeCond,
+				pageable);
 
 			// then
 			assertThat(HourRangeResult.getTotalElements()).isEqualTo(rangeHourCount);
@@ -397,7 +399,7 @@ class HourlyServiceTest {
 
 	@Nested
 	@DisplayName("시간별 데이터 날짜범위 조회")
-	class SearchHourlyDataByDateRange{
+	class SearchHourlyDataByDateRange {
 
 		@DisplayName("신규유저 조회")
 		@Test
@@ -425,7 +427,8 @@ class HourlyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<HourlyResponseDto.HourlyChurnUser> dateRangeResult = service.getHourlyChurnUser(dateRangeCond, pageable);
+			Page<HourlyResponseDto.HourlyChurnUser> dateRangeResult = service.getHourlyChurnUser(dateRangeCond,
+				pageable);
 
 			// then
 			assertThat(dateRangeResult.getTotalElements()).isEqualTo(rangeDayCount);
@@ -441,7 +444,8 @@ class HourlyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<HourlyResponseDto.HourlyPayAmount> dateRangeResult = service.getHourlyPayAmount(dateRangeCond, pageable);
+			Page<HourlyResponseDto.HourlyPayAmount> dateRangeResult = service.getHourlyPayAmount(dateRangeCond,
+				pageable);
 
 			// then
 			assertThat(dateRangeResult.getTotalElements()).isEqualTo(rangeDayCount);

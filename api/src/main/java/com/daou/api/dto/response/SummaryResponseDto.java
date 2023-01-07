@@ -3,13 +3,13 @@ package com.daou.api.dto.response;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.daou.api.model.DailySummary;
+import com.daou.api.model.HourlySummary;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.querydsl.core.annotations.QueryProjection;
 
 import lombok.Builder;
 import lombok.Getter;
-import com.daou.api.model.DailySummary;
-import com.daou.api.model.HourlySummary;
 
 public class SummaryResponseDto {
 

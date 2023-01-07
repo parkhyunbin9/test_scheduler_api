@@ -9,10 +9,11 @@ import javax.validation.constraints.PositiveOrZero;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.daou.api.model.DailySummary;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import com.daou.api.model.DailySummary;
 
 public class DailySummaryRequestDto {
 

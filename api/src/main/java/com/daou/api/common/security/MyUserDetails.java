@@ -6,10 +6,11 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.daou.api.model.User;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Delegate;
-import com.daou.api.model.User;
 
 @Getter
 @RequiredArgsConstructor

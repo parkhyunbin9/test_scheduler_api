@@ -1,17 +1,17 @@
 package com.daou.api.common.config;
 
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import lombok.RequiredArgsConstructor;
 import com.daou.api.common.interceptor.IpAddressInterceptor;
 import com.daou.api.common.interceptor.JwtTokenInterceptor;
 import com.daou.api.common.interceptor.RateLimitInterceptor;
 import com.daou.api.common.interceptor.RequestInterceptor;
+
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor

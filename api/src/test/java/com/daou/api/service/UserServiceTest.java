@@ -32,7 +32,8 @@ class UserServiceTest {
 		// given
 		AuthRequestDto testData = new AuthRequestDto("testUser", "testPassword");
 		User expectUser = new User(testData.getUsername(), testData.getPassword());
-		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(expectUser);
+		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(
+			expectUser);
 
 		// when
 		User findUser = userService.findByUsernameAndPassword(testData);
@@ -48,8 +49,9 @@ class UserServiceTest {
 		// given
 		AuthRequestDto testData = new AuthRequestDto("noUser", "noUser");
 		User expectUser = null;
-		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(expectUser);
-;
+		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(
+			expectUser);
+		;
 		//then
 		assertThatThrownBy(() -> userService.findByUsernameAndPassword(testData))
 			.isInstanceOf(CommonException.class);

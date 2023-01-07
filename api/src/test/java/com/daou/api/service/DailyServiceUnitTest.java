@@ -40,7 +40,6 @@ class DailyServiceUnitTest {
 		when(hourlyDataRepository.findDailyNewUserWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
 
-
 		// when
 		Page<DailyResponseDto.DailyNewUser> findData = dailyService.getDailyNewUser(new SearchConditionDto(0),
 			Pageable.ofSize(1));
@@ -50,6 +49,7 @@ class DailyServiceUnitTest {
 		assertThat(findData.getTotalElements()).isEqualTo(1);
 
 	}
+
 	@DisplayName("일별 이탈 유저 조회 - Unit")
 	@Test
 	void getDailyChurnUserUnitTest() {
@@ -59,7 +59,6 @@ class DailyServiceUnitTest {
 
 		when(hourlyDataRepository.findDailyChurnUserWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
-
 
 		// when
 		Page<DailyResponseDto.DailyChurnUser> findData = dailyService.getDailyChurnUser(new SearchConditionDto(0),
@@ -76,11 +75,11 @@ class DailyServiceUnitTest {
 	void getDailyPayAmountUnitTest() {
 
 		// given
-		DailyResponseDto.DailyPayAmount expect = new DailyResponseDto.DailyPayAmount(LocalDate.of(2022,01,01), BigDecimal.ONE);
+		DailyResponseDto.DailyPayAmount expect = new DailyResponseDto.DailyPayAmount(LocalDate.of(2022, 01, 01),
+			BigDecimal.ONE);
 
 		when(hourlyDataRepository.findDailyPayAmountWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
-
 
 		// when
 		Page<DailyResponseDto.DailyPayAmount> findData = dailyService.getDailyPayAmount(new SearchConditionDto(0),
@@ -97,11 +96,10 @@ class DailyServiceUnitTest {
 	void getDailyCostUnitTest() {
 
 		// given
-		DailyResponseDto.DailyCost expect = new DailyResponseDto.DailyCost(LocalDate.of(2022,01,01), BigDecimal.ONE);
+		DailyResponseDto.DailyCost expect = new DailyResponseDto.DailyCost(LocalDate.of(2022, 01, 01), BigDecimal.ONE);
 
 		when(hourlyDataRepository.findDailyCostWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
-
 
 		// when
 		Page<DailyResponseDto.DailyCost> findData = dailyService.getDailyCost(new SearchConditionDto(0),
@@ -118,11 +116,12 @@ class DailyServiceUnitTest {
 	void getDailySalesAmountUnitTest() {
 
 		// given
-		DailyResponseDto.DailySalesAmount expect = new DailyResponseDto.DailySalesAmount(LocalDate.of(2022,01,01), BigDecimal.ONE);
+		DailyResponseDto.DailySalesAmount expect = new DailyResponseDto.DailySalesAmount(LocalDate.of(2022, 01, 01),
+			BigDecimal.ONE);
 
-		when(hourlyDataRepository.findDailySalesAmountWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
+		when(
+			hourlyDataRepository.findDailySalesAmountWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
-
 
 		// when
 		Page<DailyResponseDto.DailySalesAmount> findData = dailyService.getDailySalesAmount(new SearchConditionDto(0),
@@ -133,6 +132,5 @@ class DailyServiceUnitTest {
 		assertThat(findData.getTotalElements()).isEqualTo(1);
 
 	}
-
 
 }

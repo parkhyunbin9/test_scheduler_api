@@ -2,7 +2,6 @@ package com.daou.api.common.config;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.daou.api.common.security.AuthConstant;
 import com.google.common.reflect.TypeResolver;
 
 import io.swagger.annotations.ApiModel;
@@ -27,7 +27,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import com.daou.api.common.security.AuthConstant;
 
 @Configuration
 @EnableSwagger2
@@ -119,8 +118,6 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
 			this.sort = sort;
 		}
 	}
-
-
 
 }
 

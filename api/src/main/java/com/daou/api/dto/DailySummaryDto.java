@@ -3,10 +3,10 @@ package com.daou.api.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.daou.api.model.DailySummary;
 import com.querydsl.core.annotations.QueryProjection;
 
 import lombok.Getter;
-import com.daou.api.model.DailySummary;
 
 @Getter
 public class DailySummaryDto {

@@ -44,6 +44,7 @@ class HourlySummaryConfigurationTest {
 	HourlySummaryRepository repository;
 	@Autowired
 	JobLauncherTestUtils jobLauncherTestUtils;
+
 	@AfterEach
 	void tearDown() throws Exception {
 		reader.close();

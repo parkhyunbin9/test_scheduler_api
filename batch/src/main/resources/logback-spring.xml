@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
 
-    <springProperty name="LOG_PATH"            source="logging.logback.path"/>
-    <springProperty name="MAX_HISTORY"         source="logging.logback.rollingpolicy.max-history"/>
-    <springProperty name="MAX_FILE_SIZE"       source="logging.logback.rollingpolicy.max-file-size"/>
-    <property       name="FILE_NAME"	       value="BatchApplication" />
-    <property       name="CONSOLE_PATTERN"     value="[%d{HH:mm:ss.SSS}] [%thread] %-5level-[%M] - %msg%n"/>
-    <property       name="FILE_PATTERN"        value="[%d{YYYY-MM-dd HH:mm:ss}]-[%-5level]-[%M]-%msg%n"/>
-    <property       name="SLACK_PATTERN"       value="[%d{yyyy-MM-dd HH:mm:ss}] - [%thread] %-5level - %msg%n"/>
-    <springProperty name="SLACK_WEBHOOK_URI"   source="logging.slack.webhook-uri"/>
+    <springProperty name="LOG_PATH" source="logging.logback.path"/>
+    <springProperty name="MAX_HISTORY" source="logging.logback.rollingpolicy.max-history"/>
+    <springProperty name="MAX_FILE_SIZE" source="logging.logback.rollingpolicy.max-file-size"/>
+    <property name="FILE_NAME" value="BatchApplication"/>
+    <property name="CONSOLE_PATTERN" value="[%d{HH:mm:ss.SSS}] [%thread] %-5level-[%M] - %msg%n"/>
+    <property name="FILE_PATTERN" value="[%d{YYYY-MM-dd HH:mm:ss}]-[%-5level]-[%M]-%msg%n"/>
+    <property name="SLACK_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}] - [%thread] %-5level - %msg%n"/>
+    <springProperty name="SLACK_WEBHOOK_URI" source="logging.slack.webhook-uri"/>
 
     <!-- Console Appender -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
@@ -42,14 +42,14 @@
     </appender>
 
     <root level="info">
-        <appender-ref ref="console" />
-        <appender-ref ref="file" />
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
     </root>
 
     <root level="error">
-        <appender-ref ref="console" />
-        <appender-ref ref="file" />
-        <appender-ref ref="slack" />
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="slack"/>
     </root>
 
 </configuration>

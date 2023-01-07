@@ -1,24 +1,22 @@
 package com.daou.api.controller;
 
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.daou.api.common.security.JwtTokenUtils;
+import com.daou.api.common.spec.CommonResponse;
+import com.daou.api.dto.request.AuthRequestDto;
+import com.daou.api.model.User;
+import com.daou.api.service.UserService;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.daou.api.common.security.JwtTokenUtils;
-import com.daou.api.common.spec.CommonException;
-import com.daou.api.common.spec.CommonResponse;
-import com.daou.api.common.spec.ExceptionCode;
-import com.daou.api.dto.request.AuthRequestDto;
-import com.daou.api.model.User;
-import com.daou.api.service.UserService;
 
 @Slf4j
 @RestController

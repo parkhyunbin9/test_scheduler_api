@@ -73,11 +73,12 @@ class UserControllerTest {
 	@Test
 	void wrongUserName() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("user","password");
+		AuthRequestDto authRequestDto = new AuthRequestDto("user", "password");
 		String userStr = objectMapper.writeValueAsString(authRequestDto);
 		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
 
-		lenient().when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenThrow(new CommonException(ExceptionCode.NOT_FOUND));
+		lenient().when(userService.findByUsernameAndPassword(any(AuthRequestDto.class)))
+			.thenThrow(new CommonException(ExceptionCode.NOT_FOUND));
 		assertThatThrownBy(() ->
 			mock.perform(
 				post("/api/user/login")
@@ -92,7 +93,7 @@ class UserControllerTest {
 	@Test
 	void withoutUsernameFail() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("","password");
+		AuthRequestDto authRequestDto = new AuthRequestDto("", "password");
 		String userStr = objectMapper.writeValueAsString(authRequestDto);
 		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
 
@@ -114,7 +115,7 @@ class UserControllerTest {
 	@Test
 	void withoutPasswordFail() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("username","");
+		AuthRequestDto authRequestDto = new AuthRequestDto("username", "");
 		String userStr = objectMapper.writeValueAsString(authRequestDto);
 		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
 
@@ -212,11 +213,8 @@ class UserControllerTest {
 					.characterEncoding(StandardCharsets.UTF_8)
 			).andReturn().getResponse().getContentType();
 
-
 		// then
 		assertThat(loginResponseContentType).isEqualTo(MediaType.APPLICATION_JSON_VALUE);
 	}
-
-
 
 }

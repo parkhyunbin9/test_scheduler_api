@@ -3,11 +3,11 @@ package com.daou.api.dto.response;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.daou.api.model.HourlyData;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Builder;
 import lombok.Getter;
-import com.daou.api.model.HourlyData;
 
 public class HourlyDataResponseDto {
 

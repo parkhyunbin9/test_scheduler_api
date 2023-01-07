@@ -85,14 +85,18 @@ class DailyServiceTest {
 
 			// when
 			Page<DailyResponseDto.DailyNewUser> result = repository.findDailyNewUserWithConditions(cond, pageable);
-			Page<DailyResponseDto.DailyNewUser> invalidDateResult = repository.findDailyNewUserWithConditions(noDateCond,
+			Page<DailyResponseDto.DailyNewUser> invalidDateResult = repository.findDailyNewUserWithConditions(
+				noDateCond,
 				pageable);
 			Page<DailyResponseDto.DailyNewUser> halfResult = repository.findDailyNewUserWithConditions(cond, halfPage);
 
 			// then
 			assertThat(result.getTotalElements()).isEqualTo(24);
 			assertThat(
-				result.stream().mapToLong(DailyResponseDto.DailyNewUser::getNewUser).reduce(Math::addExact).orElseThrow())
+				result.stream()
+					.mapToLong(DailyResponseDto.DailyNewUser::getNewUser)
+					.reduce(Math::addExact)
+					.orElseThrow())
 				.isEqualTo(newUserNum * 24);
 			assertThat(invalidDateResult.getTotalElements()).isEqualTo(0);
 			assertThat(result.getTotalPages()).isEqualTo(1);
@@ -113,15 +117,20 @@ class DailyServiceTest {
 
 			// when
 			Page<DailyResponseDto.DailyChurnUser> result = repository.findDailyChurnUserWithConditions(cond, pageable);
-			Page<DailyResponseDto.DailyChurnUser> invalidDateResult = repository.findDailyChurnUserWithConditions(noDateCond,
+			Page<DailyResponseDto.DailyChurnUser> invalidDateResult = repository.findDailyChurnUserWithConditions(
+				noDateCond,
 				pageable);
-			Page<DailyResponseDto.DailyChurnUser> halfResult = repository.findDailyChurnUserWithConditions(cond, halfPage);
+			Page<DailyResponseDto.DailyChurnUser> halfResult = repository.findDailyChurnUserWithConditions(cond,
+				halfPage);
 
 			// then
 			assertThat(result.getTotalElements()).isEqualTo(24);
 			assertThat(
-				result.stream().mapToLong(DailyResponseDto.DailyChurnUser::getChurnUser).reduce(Math::addExact).orElseThrow())
-				.isEqualTo(churnUserNum* 24);
+				result.stream()
+					.mapToLong(DailyResponseDto.DailyChurnUser::getChurnUser)
+					.reduce(Math::addExact)
+					.orElseThrow())
+				.isEqualTo(churnUserNum * 24);
 			assertThat(invalidDateResult.getTotalElements()).isEqualTo(0);
 			assertThat(result.getTotalPages()).isEqualTo(1);
 			assertThat(halfResult.getPageable().next().getPageSize()).isEqualTo(12);
@@ -143,12 +152,16 @@ class DailyServiceTest {
 			Page<DailyResponseDto.DailyPayAmount> result = repository.findDailyPayAmountWithConditions(cond, pageable);
 			Page<DailyResponseDto.DailyPayAmount> invalidDateResult = repository.findDailyPayAmountWithConditions(
 				noDateCond, pageable);
-			Page<DailyResponseDto.DailyPayAmount> halfResult = repository.findDailyPayAmountWithConditions(cond, halfPage);
+			Page<DailyResponseDto.DailyPayAmount> halfResult = repository.findDailyPayAmountWithConditions(cond,
+				halfPage);
 
 			// then
 			assertThat(result.getTotalElements()).isEqualTo(24);
 			assertThat(
-				result.stream().map(DailyResponseDto.DailyPayAmount::getPayAmount).reduce(BigDecimal::add).orElseThrow())
+				result.stream()
+					.map(DailyResponseDto.DailyPayAmount::getPayAmount)
+					.reduce(BigDecimal::add)
+					.orElseThrow())
 				.isEqualByComparingTo(payAmountNum.multiply(BigDecimal.valueOf(24L)));
 			assertThat(invalidDateResult.getTotalElements()).isEqualTo(0);
 			assertThat(result.getTotalPages()).isEqualTo(1);
@@ -194,7 +207,8 @@ class DailyServiceTest {
 			Pageable halfPage = Pageable.ofSize(12);
 
 			// when
-			Page<DailyResponseDto.DailySalesAmount> result = repository.findDailySalesAmountWithConditions(cond, pageable);
+			Page<DailyResponseDto.DailySalesAmount> result = repository.findDailySalesAmountWithConditions(cond,
+				pageable);
 			Page<DailyResponseDto.DailySalesAmount> invalidDateResult = repository.findDailySalesAmountWithConditions(
 				noDateCond, pageable);
 			Page<DailyResponseDto.DailySalesAmount> halfResult = repository.findDailySalesAmountWithConditions(cond,
@@ -325,7 +339,8 @@ class DailyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<DailyResponseDto.DailyNewUser> hourResult = repository.findDailyNewUserWithConditions(hourCond, pageable);
+			Page<DailyResponseDto.DailyNewUser> hourResult = repository.findDailyNewUserWithConditions(hourCond,
+				pageable);
 
 			// then
 			assertThat(hourResult.getTotalElements()).isEqualTo(1);
@@ -340,7 +355,8 @@ class DailyServiceTest {
 			Pageable pageable = Pageable.ofSize(24).withPage(0);
 
 			// when
-			Page<DailyResponseDto.DailyChurnUser> hourResult = repository.findDailyChurnUserWithConditions(hourCond, pageable);
+			Page<DailyResponseDto.DailyChurnUser> hourResult = repository.findDailyChurnUserWithConditions(hourCond,
+				pageable);
 
 			// then
 			assertThat(hourResult.getTotalElements()).isEqualTo(1);

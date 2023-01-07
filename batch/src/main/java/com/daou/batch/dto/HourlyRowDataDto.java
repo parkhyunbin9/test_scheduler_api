@@ -3,10 +3,11 @@ package com.daou.batch.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.daou.batch.model.HourlyRowData;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import com.daou.batch.model.HourlyRowData;
 
 @Getter
 @Setter

@@ -23,12 +23,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.common.service.SlackService;
 import com.daou.batch.dto.HourlyDataDto;
 import com.daou.batch.model.HourlyData;
 import com.daou.batch.repository.HourlyDataRepository;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -48,13 +49,13 @@ public class CleanHourlyDataConfiguration {
 		return new SimpleJobBuilder(jobBuilderFactory.get(JOB_NAME)
 			.incrementer(new RunIdIncrementer()))
 			.start(cleanHourlyData())
-				.on(ExitStatus.FAILED.getExitCode())
-				.to(processError(null))
-				.on("*")
-				.end()
+			.on(ExitStatus.FAILED.getExitCode())
+			.to(processError(null))
+			.on("*")
+			.end()
 			.from(cleanHourlyData())
-				.on("*")
-				.end()
+			.on("*")
+			.end()
 			.end()
 			.build();
 	}
@@ -107,12 +108,12 @@ public class CleanHourlyDataConfiguration {
 
 	@JobScope
 	@Bean(JOB_NAME + ERROR_PROCESSOR)
-	public Step processError( @Value("#{jobParameters[batchDate]}") String batchDate) {
+	public Step processError(@Value("#{jobParameters[batchDate]}") String batchDate) {
 		return stepBuilderFactory.get("errorProcessor" + batchDate).allowStartIfComplete(true)
 			.tasklet(((contribution, chunkContext) -> {
 				String errorMessage = JOB_NAME + " 배치 요청일 : " + batchDate + " 에러 발생";
 				log.error(errorMessage);
-				slackService.postSlackMessage(errorMessage+ " 롤백 수행 요청!");
+				slackService.postSlackMessage(errorMessage + " 롤백 수행 요청!");
 				errorRollBackByDate();
 				return RepeatStatus.FINISHED;
 			})).build();

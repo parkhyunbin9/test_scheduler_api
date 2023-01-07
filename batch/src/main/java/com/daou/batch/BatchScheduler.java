@@ -19,8 +19,6 @@ import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteExcep
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.common.service.SlackService;
 import com.daou.batch.job.CleanHourlyDataConfiguration;
 import com.daou.batch.job.DailySummaryConfiguration;
@@ -28,11 +26,15 @@ import com.daou.batch.job.HourlySummaryConfiguration;
 import com.daou.batch.job.LoadFileAndSaveConfiguration;
 import com.daou.batch.job.RollBackConfiguration;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
 public class BatchScheduler {
 
+	final LocalDate batchDate = LocalDate.now().minusDays(12);
 	private final JobLauncher launcher;
 	private final LoadFileAndSaveConfiguration loadFileAndSave;
 	private final CleanHourlyDataConfiguration cleanHourlyData;
@@ -40,8 +42,6 @@ public class BatchScheduler {
 	private final DailySummaryConfiguration dailySummary;
 	private final RollBackConfiguration rollback;
 	private final SlackService slackService;
-
-	final LocalDate batchDate = LocalDate.now().minusDays(12);
 
 	@Scheduled(cron = "0 0/2 * * * ?")
 	public void runJob() {

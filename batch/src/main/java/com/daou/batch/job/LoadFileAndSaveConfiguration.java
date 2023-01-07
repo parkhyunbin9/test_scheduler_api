@@ -21,8 +21,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.common.FileType;
 import com.daou.batch.common.service.SlackService;
 import com.daou.batch.common.utils.FileManager;
@@ -31,6 +29,9 @@ import com.daou.batch.dto.HourlyRowDataDto;
 import com.daou.batch.reader.FileFromPathReader;
 import com.daou.batch.repository.HourlyRowDataRepository;
 import com.daou.batch.writer.RowDataWriter;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -47,6 +48,7 @@ public class LoadFileAndSaveConfiguration {
 	private final FileFromPathReader reader;
 	private final SlackService slackService;
 	private final FileManager fileManager;
+
 	/**
 	 * TODO: 2. 실패시 처리 하지 않음 (transaction) 0
 	 * TODO: 3. 로깅
@@ -92,17 +94,15 @@ public class LoadFileAndSaveConfiguration {
 				.on("*")
 				.end();
 
-
-
 			// 스텝을 순회하며 수행하는데 실패시 에러 처리 후 실패 /그외는 성공
 		}
 
 		return job
-				.on(ExitStatus.COMPLETED.getExitCode())
-				.to(zipOriginFile())
-				.next(deleteOriginFile())
-				.on("*")
-				.end()
+			.on(ExitStatus.COMPLETED.getExitCode())
+			.to(zipOriginFile())
+			.next(deleteOriginFile())
+			.on("*")
+			.end()
 			.end()
 			.build();
 	}
@@ -154,7 +154,7 @@ public class LoadFileAndSaveConfiguration {
 
 	@JobScope
 	@Bean(JOB_NAME + ERROR_PROCESSOR)
-	public Step processError( @Value("#{jobParameters[batchDate]}") String batchDate) {
+	public Step processError(@Value("#{jobParameters[batchDate]}") String batchDate) {
 		return stepBuilderFactory.get("errorProcessor" + batchDate).allowStartIfComplete(true)
 			.tasklet(((contribution, chunkContext) -> {
 				String errorMessage = JOB_NAME + " 배치 요청일 : " + batchDate + " 에러 발생";

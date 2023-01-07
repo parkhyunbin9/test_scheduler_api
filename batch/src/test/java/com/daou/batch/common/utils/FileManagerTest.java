@@ -55,7 +55,7 @@ class FileManagerTest {
 		assertThat(Arrays.toString(savedPath.toFile().list())).contains(testFile);
 
 		fileManager.zipOriginFile();
-		Path zipFilePath = Paths.get("src", "test", "data","success");
+		Path zipFilePath = Paths.get("src", "test", "data", "success");
 		assertThat(Arrays.toString(zipFilePath.toFile().list())).contains(zipFileName);
 	}
 

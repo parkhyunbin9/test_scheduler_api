@@ -3,26 +3,24 @@ package com.daou.api.controller;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.CommonResponse;
 import com.daou.api.common.spec.ExceptionCode;
 import com.daou.api.dto.request.search.SearchConditionDto;
 import com.daou.api.dto.response.SummaryResponseDto;
 import com.daou.api.service.SummaryService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Api(value = "일별 & 시간별 누적 요약 조회 API")

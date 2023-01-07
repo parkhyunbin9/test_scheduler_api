@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.daou.api.common.spec.CommonResponse;
+import com.daou.api.dto.request.HourlyInfoRequestDto;
+import com.daou.api.service.HourlyCommandService;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.daou.api.common.spec.CommonResponse;
-import com.daou.api.dto.request.HourlyInfoRequestDto;
-import com.daou.api.service.HourlyCommandService;
-import com.daou.api.service.HourlyService;
 
 @Slf4j
 @Api(value = "날짜의 시간별 집계 데이터 삽입/수정/삭제 API")

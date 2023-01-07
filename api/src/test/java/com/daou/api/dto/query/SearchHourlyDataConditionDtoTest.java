@@ -35,10 +35,8 @@ class SearchHourlyDataConditionDtoTest {
 
 	@Mock
 	HourlyService hourlyService;
-
-	private MockMvc mock;
-
 	Pageable page = Pageable.ofSize(1);
+	private MockMvc mock;
 
 	@BeforeEach
 	public void init() {

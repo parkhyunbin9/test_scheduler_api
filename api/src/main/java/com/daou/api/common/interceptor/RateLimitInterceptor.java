@@ -9,11 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.daou.api.common.manager.RateLimitBucketManager;
+
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.ConsumptionProbe;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.daou.api.common.manager.RateLimitBucketManager;
 
 @Slf4j
 @Component

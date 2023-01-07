@@ -39,7 +39,6 @@ class HourlyServiceUnitTest {
 		when(hourlyDataRepository.findHourlyNewUserWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
 
-
 		// when
 		Page<HourlyResponseDto.HourlyNewUser> findData = hourlyService.getHourlyNewUser(new SearchConditionDto(0),
 			Pageable.ofSize(1));
@@ -49,6 +48,7 @@ class HourlyServiceUnitTest {
 		assertThat(findData.getTotalElements()).isEqualTo(1);
 
 	}
+
 	@DisplayName("시간별 이탈 유저 조회 - Unit")
 	@Test
 	void getHourlyChurnUserUnitTest() {
@@ -58,7 +58,6 @@ class HourlyServiceUnitTest {
 
 		when(hourlyDataRepository.findHourlyChurnUserWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
-
 
 		// when
 		Page<HourlyResponseDto.HourlyChurnUser> findData = hourlyService.getHourlyChurnUser(new SearchConditionDto(0),
@@ -80,7 +79,6 @@ class HourlyServiceUnitTest {
 		when(hourlyDataRepository.findHourlyPayAmountWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
 
-
 		// when
 		Page<HourlyResponseDto.HourlyPayAmount> findData = hourlyService.getHourlyPayAmount(new SearchConditionDto(0),
 			Pageable.ofSize(1));
@@ -101,7 +99,6 @@ class HourlyServiceUnitTest {
 		when(hourlyDataRepository.findHourlyCostWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
 
-
 		// when
 		Page<HourlyResponseDto.HourlyCost> findData = hourlyService.getHourlyCost(new SearchConditionDto(0),
 			Pageable.ofSize(1));
@@ -119,12 +116,13 @@ class HourlyServiceUnitTest {
 		// given
 		HourlyResponseDto.HourlySalesAmount expect = new HourlyResponseDto.HourlySalesAmount(0, BigDecimal.ONE);
 
-		when(hourlyDataRepository.findHourlySalesAmountWithConditions(any(SearchConditionDto.class), any(Pageable.class)))
+		when(hourlyDataRepository.findHourlySalesAmountWithConditions(any(SearchConditionDto.class),
+			any(Pageable.class)))
 			.thenReturn(new PageImpl<>(List.of(expect)));
 
-
 		// when
-		Page<HourlyResponseDto.HourlySalesAmount> findData = hourlyService.getHourlySalesAmount(new SearchConditionDto(0),
+		Page<HourlyResponseDto.HourlySalesAmount> findData = hourlyService.getHourlySalesAmount(
+			new SearchConditionDto(0),
 			Pageable.ofSize(1));
 
 		// then
@@ -132,6 +130,5 @@ class HourlyServiceUnitTest {
 		assertThat(findData.getTotalElements()).isEqualTo(1);
 
 	}
-
 
 }

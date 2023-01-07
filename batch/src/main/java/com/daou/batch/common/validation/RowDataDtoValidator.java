@@ -6,8 +6,9 @@ import java.time.LocalDate;
 import org.springframework.batch.item.validator.ValidationException;
 import org.springframework.batch.item.validator.Validator;
 
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.dto.HourlyRowDataDto;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class RowDataDtoValidator implements Validator<HourlyRowDataDto> {

@@ -56,6 +56,7 @@ class HourlyCommandServiceTest {
 				.isEqualTo(HourlyDataResponseDto.SaveAndUpdateResponse.fromEntity(saveData.toEntity()));
 
 		}
+
 		@DisplayName("수정")
 		@Test
 		void updateSuccess() {
@@ -76,7 +77,8 @@ class HourlyCommandServiceTest {
 			BigDecimal changeCost = BigDecimal.valueOf(1000L);
 			BigDecimal changeSalesAmount = BigDecimal.valueOf(1000L);
 
-			HourlyInfoRequestDto.UpdateRequest changeData = new HourlyInfoRequestDto.UpdateRequest(unChangedDate, unChangedHour, changeNewUser
+			HourlyInfoRequestDto.UpdateRequest changeData = new HourlyInfoRequestDto.UpdateRequest(unChangedDate,
+				unChangedHour, changeNewUser
 				, changeChurnUser, changePayAmount, changeCost, changeSalesAmount);
 
 			// when
@@ -91,6 +93,7 @@ class HourlyCommandServiceTest {
 			assertThat(updatedData.getSalesAmount()).isEqualTo(changeSalesAmount);
 
 		}
+
 		@DisplayName("삭제")
 		@Test
 		void deleteSuccess() {
@@ -99,7 +102,7 @@ class HourlyCommandServiceTest {
 			HourlyInfoRequestDto.DeleteRequest deleteRequest = new HourlyInfoRequestDto.DeleteRequest(
 				LocalDate.of(2022, 01, 01), 0);
 
-			Optional<HourlyData> deleteData= Optional.of(HourlyData.builder()
+			Optional<HourlyData> deleteData = Optional.of(HourlyData.builder()
 				.date(deleteRequest.getDate())
 				.hour(deleteRequest.getHour())
 				.newUser(0L)

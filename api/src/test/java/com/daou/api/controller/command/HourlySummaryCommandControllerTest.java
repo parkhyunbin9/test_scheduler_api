@@ -266,10 +266,9 @@ class HourlySummaryCommandControllerTest {
 		@Test
 		void invalidDateSaveFail() throws Exception {
 
-			DailySummaryRequestDto.SaveRequest futureData= DailySummaryRequestDto.SaveRequest.builder()
+			DailySummaryRequestDto.SaveRequest futureData = DailySummaryRequestDto.SaveRequest.builder()
 				.date(LocalDate.parse(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
 				.build();
-
 
 			String futureStr = objectMapper.writeValueAsString(futureData);
 
@@ -288,7 +287,7 @@ class HourlySummaryCommandControllerTest {
 		@Test
 		void invalidSumSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.SaveRequest minusSumHourlySummary= HourlySummaryRequestDto.SaveRequest.builder()
+			HourlySummaryRequestDto.SaveRequest minusSumHourlySummary = HourlySummaryRequestDto.SaveRequest.builder()
 				.hour(0)
 				.sumNewUser(-1L)
 				.build();
@@ -298,7 +297,7 @@ class HourlySummaryCommandControllerTest {
 				.sumNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusSumHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusSumHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusSumDailySummary);
 
 			mock.perform(
@@ -319,11 +318,12 @@ class HourlySummaryCommandControllerTest {
 				.andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(BindException.class))
 				.andExpect(status().isBadRequest());
 		}
+
 		@DisplayName("유효성 검증 실패 - avg ")
 		@Test
 		void invalidAvgSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.SaveRequest minusAvgHourlySummary= HourlySummaryRequestDto.SaveRequest.builder()
+			HourlySummaryRequestDto.SaveRequest minusAvgHourlySummary = HourlySummaryRequestDto.SaveRequest.builder()
 				.hour(0)
 				.avgNewUser(-1D)
 				.build();
@@ -333,7 +333,7 @@ class HourlySummaryCommandControllerTest {
 				.avgNewUser(-1D)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusAvgHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusAvgHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusAvgDailySummary);
 
 			mock.perform(
@@ -354,11 +354,12 @@ class HourlySummaryCommandControllerTest {
 				.andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(BindException.class))
 				.andExpect(status().isBadRequest());
 		}
+
 		@DisplayName("유효성 검증 실패 - max ")
 		@Test
 		void invalidMaxSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.SaveRequest minusMaxHourlySummary= HourlySummaryRequestDto.SaveRequest.builder()
+			HourlySummaryRequestDto.SaveRequest minusMaxHourlySummary = HourlySummaryRequestDto.SaveRequest.builder()
 				.hour(0)
 				.maxNewUser(-1L)
 				.build();
@@ -368,7 +369,7 @@ class HourlySummaryCommandControllerTest {
 				.maxNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusMaxHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusMaxHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusMaxDailySummary);
 
 			mock.perform(
@@ -389,11 +390,12 @@ class HourlySummaryCommandControllerTest {
 				.andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(BindException.class))
 				.andExpect(status().isBadRequest());
 		}
+
 		@DisplayName("유효성 검증 실패 - min ")
 		@Test
 		void invalidMinSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.SaveRequest minusMinHourlySummary= HourlySummaryRequestDto.SaveRequest.builder()
+			HourlySummaryRequestDto.SaveRequest minusMinHourlySummary = HourlySummaryRequestDto.SaveRequest.builder()
 				.hour(0)
 				.minNewUser(-1L)
 				.build();
@@ -403,7 +405,7 @@ class HourlySummaryCommandControllerTest {
 				.minNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusMinHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusMinHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusMinDailySummary);
 
 			mock.perform(
@@ -426,6 +428,7 @@ class HourlySummaryCommandControllerTest {
 		}
 
 	}
+
 	@DisplayName("수정")
 	@Nested
 	class Update {
@@ -594,7 +597,7 @@ class HourlySummaryCommandControllerTest {
 				.minSalesAmount(BigDecimal.valueOf(100L))
 				.build();
 
-			String updateStr= objectMapper.writeValueAsString(updateData);
+			String updateStr = objectMapper.writeValueAsString(updateData);
 
 			mock.perform(
 					MockMvcRequestBuilders.put("/api/daily-summary")
@@ -648,7 +651,6 @@ class HourlySummaryCommandControllerTest {
 				.date(LocalDate.parse(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
 				.build();
 
-
 			String futureStr = objectMapper.writeValueAsString(futureData);
 
 			mock.perform(
@@ -665,7 +667,7 @@ class HourlySummaryCommandControllerTest {
 		@Test
 		void invalidSumUpdateFail() throws Exception {
 
-			HourlySummaryRequestDto.UpdateRequest minusSumHourlySummary= HourlySummaryRequestDto.UpdateRequest.builder()
+			HourlySummaryRequestDto.UpdateRequest minusSumHourlySummary = HourlySummaryRequestDto.UpdateRequest.builder()
 				.hour(0)
 				.sumNewUser(-1L)
 				.build();
@@ -675,7 +677,7 @@ class HourlySummaryCommandControllerTest {
 				.sumNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusSumHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusSumHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusSumDailySummary);
 
 			mock.perform(
@@ -696,11 +698,12 @@ class HourlySummaryCommandControllerTest {
 				.andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(BindException.class))
 				.andExpect(status().isBadRequest());
 		}
+
 		@DisplayName("유효성 검증 실패 - avg ")
 		@Test
 		void invalidAvgSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.UpdateRequest minusAvgHourlySummary= HourlySummaryRequestDto.UpdateRequest.builder()
+			HourlySummaryRequestDto.UpdateRequest minusAvgHourlySummary = HourlySummaryRequestDto.UpdateRequest.builder()
 				.hour(0)
 				.avgNewUser(-1D)
 				.build();
@@ -710,7 +713,7 @@ class HourlySummaryCommandControllerTest {
 				.avgNewUser(-1D)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusAvgHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusAvgHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusAvgDailySummary);
 
 			mock.perform(
@@ -736,7 +739,7 @@ class HourlySummaryCommandControllerTest {
 		@Test
 		void invalidMaxSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.UpdateRequest minusMaxHourlySummary= HourlySummaryRequestDto.UpdateRequest.builder()
+			HourlySummaryRequestDto.UpdateRequest minusMaxHourlySummary = HourlySummaryRequestDto.UpdateRequest.builder()
 				.hour(0)
 				.maxNewUser(-1L)
 				.build();
@@ -746,7 +749,7 @@ class HourlySummaryCommandControllerTest {
 				.maxNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusMaxHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusMaxHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusMaxDailySummary);
 
 			mock.perform(
@@ -772,7 +775,7 @@ class HourlySummaryCommandControllerTest {
 		@Test
 		void invalidMinSaveFail() throws Exception {
 
-			HourlySummaryRequestDto.UpdateRequest minusMinHourlySummary= HourlySummaryRequestDto.UpdateRequest.builder()
+			HourlySummaryRequestDto.UpdateRequest minusMinHourlySummary = HourlySummaryRequestDto.UpdateRequest.builder()
 				.hour(0)
 				.minNewUser(-1L)
 				.build();
@@ -782,7 +785,7 @@ class HourlySummaryCommandControllerTest {
 				.minNewUser(-1L)
 				.build();
 
-			String hourlySummaryStr= objectMapper.writeValueAsString(minusMinHourlySummary);
+			String hourlySummaryStr = objectMapper.writeValueAsString(minusMinHourlySummary);
 			String dailySummaryStr = objectMapper.writeValueAsString(minusMinDailySummary);
 
 			mock.perform(

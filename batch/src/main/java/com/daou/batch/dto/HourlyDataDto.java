@@ -3,9 +3,10 @@ package com.daou.batch.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.daou.batch.model.HourlyData;
+
 import lombok.Builder;
 import lombok.Getter;
-import com.daou.batch.model.HourlyData;
 
 @Getter
 public class HourlyDataDto {

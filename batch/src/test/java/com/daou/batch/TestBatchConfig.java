@@ -10,7 +10,7 @@ import org.springframework.context.annotation.FilterType;
 @EnableAutoConfiguration
 @EnableBatchProcessing
 @ComponentScan(basePackages = {"com.daou.batch"},
-        excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*[Configuration]")}
+	excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*[Configuration]")}
 )
 
 public class TestBatchConfig {

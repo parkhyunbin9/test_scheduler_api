@@ -49,6 +49,7 @@ class DailySummaryConfigurationTest {
 		dataRepository.deleteAll();
 		repository.deleteAll();
 	}
+
 	@DisplayName("1차 집계 HourlyData를 일별 누적 데이터로 변환")
 	@Test
 	public void hourlyDataToDailySummaryDto() throws Exception {

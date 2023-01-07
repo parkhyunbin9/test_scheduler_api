@@ -97,7 +97,7 @@ class DailyControllerTest {
 	@Test
 	void notFound() throws Exception {
 
-        // service return null
+		// service return null
 		assertThatThrownBy(() ->
 			mock.perform(
 					get("/api/daily/new-user")
@@ -106,19 +106,19 @@ class DailyControllerTest {
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isNotFound())
 		).hasCause(new CommonException(ExceptionCode.NOT_FOUND));
-        ArrayList<DailyResponseDto.DailyNewUser> mockData = new ArrayList<>();
-        Page<DailyResponseDto.DailyNewUser> dailyNewUsers = new PageImpl<>(mockData, page, 1);
+		ArrayList<DailyResponseDto.DailyNewUser> mockData = new ArrayList<>();
+		Page<DailyResponseDto.DailyNewUser> dailyNewUsers = new PageImpl<>(mockData, page, 1);
 
-        when(dailyService.getDailyNewUser(any(SearchConditionDto.class), any(Pageable.class))).thenReturn(
-            dailyNewUsers);
+		when(dailyService.getDailyNewUser(any(SearchConditionDto.class), any(Pageable.class))).thenReturn(
+			dailyNewUsers);
 
-        // service return empty
+		// service return empty
 		assertThatThrownBy(() ->
 			mock.perform(
-				get("/api/daily/new-user")
-					.param("hour", hourMinCond.getHour().toString())
-					.param("page", page.toString())
-					.contentType(MediaType.APPLICATION_JSON))
+					get("/api/daily/new-user")
+						.param("hour", hourMinCond.getHour().toString())
+						.param("page", page.toString())
+						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isNotFound())
 		).hasCause(new CommonException(ExceptionCode.NOT_FOUND));
 	}

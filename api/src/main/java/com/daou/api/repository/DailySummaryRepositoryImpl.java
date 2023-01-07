@@ -10,14 +10,14 @@ import javax.persistence.EntityManager;
 
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
-import com.querydsl.jpa.impl.JPAQueryFactory;
-
-import lombok.extern.slf4j.Slf4j;
 import com.daou.api.dto.request.search.SearchConditionDto;
 import com.daou.api.dto.response.QSummaryResponseDto_Daily;
 import com.daou.api.dto.response.SummaryResponseDto;
 import com.daou.api.model.DailySummary;
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.jpa.impl.JPAQueryFactory;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DailySummaryRepositoryImpl extends QuerydslRepositorySupport implements DailySummaryRepositoryCustom {

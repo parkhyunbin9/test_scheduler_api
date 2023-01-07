@@ -7,10 +7,11 @@ import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Range;
 
+import com.daou.api.model.HourlySummary;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import com.daou.api.model.HourlySummary;
 
 public class HourlySummaryRequestDto {
 

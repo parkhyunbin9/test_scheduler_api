@@ -8,13 +8,13 @@ import javax.persistence.EntityManager;
 
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
+import com.daou.api.dto.request.search.SearchConditionDto;
+import com.daou.api.dto.response.QSummaryResponseDto_Hourly;
+import com.daou.api.dto.response.SummaryResponseDto;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 import lombok.extern.slf4j.Slf4j;
-import com.daou.api.dto.request.search.SearchConditionDto;
-import com.daou.api.dto.response.QSummaryResponseDto_Hourly;
-import com.daou.api.dto.response.SummaryResponseDto;
 
 @Slf4j
 public class HourlySummaryRepositoryImpl extends QuerydslRepositorySupport implements HourlySummaryRepositoryCustom {

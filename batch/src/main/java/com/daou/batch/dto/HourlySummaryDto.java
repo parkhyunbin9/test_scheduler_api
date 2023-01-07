@@ -2,10 +2,10 @@ package com.daou.batch.dto;
 
 import java.math.BigDecimal;
 
+import com.daou.batch.model.HourlySummary;
 import com.querydsl.core.annotations.QueryProjection;
 
 import lombok.Getter;
-import com.daou.batch.model.HourlySummary;
 
 @Getter
 public class HourlySummaryDto {

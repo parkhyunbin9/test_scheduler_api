@@ -7,10 +7,11 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.daou.api.common.validation.HourAndDateRange;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import com.daou.api.common.validation.HourAndDateRange;
 
 @Getter
 @Setter

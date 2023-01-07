@@ -141,7 +141,7 @@ class HourlyDataCommandControllerTest {
 		@Test
 		void invalidDateSaveFail() throws Exception {
 			HourlyInfoRequestDto.SaveRequest futureData = HourlyInfoRequestDto.SaveRequest.builder()
-				.date(LocalDate.parse(LocalDate.now().plusDays(1).format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
+				.date(LocalDate.parse(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
 				.hour(0)
 				.newUser(10L)
 				.churnUser(12L)
@@ -167,7 +167,7 @@ class HourlyDataCommandControllerTest {
 		@Test
 		void invalidHourSaveFail() throws Exception {
 
-			HourlyInfoRequestDto.SaveRequest underZeroHour= HourlyInfoRequestDto.SaveRequest.builder()
+			HourlyInfoRequestDto.SaveRequest underZeroHour = HourlyInfoRequestDto.SaveRequest.builder()
 				.date(LocalDate.parse("2022-12-01", DateTimeFormatter.ofPattern("yyyy-MM-dd")))
 				.hour(-1)
 				.newUser(10L)
@@ -187,8 +187,8 @@ class HourlyDataCommandControllerTest {
 				.salesAmount(BigDecimal.valueOf(10L))
 				.build();
 
-			String underZeroData= objectMapper.writeValueAsString(underZeroHour);
-			String overMaxData= objectMapper.writeValueAsString(overMaxHour);
+			String underZeroData = objectMapper.writeValueAsString(underZeroHour);
+			String overMaxData = objectMapper.writeValueAsString(overMaxHour);
 
 			mock.perform(
 					post("/api/hourly-data")
@@ -528,7 +528,7 @@ class HourlyDataCommandControllerTest {
 		@Test
 		void invalidDateUpdateFail() throws Exception {
 			HourlyInfoRequestDto.UpdateRequest futureData = HourlyInfoRequestDto.UpdateRequest.builder()
-				.date(LocalDate.parse(LocalDate.now().plusDays(1).format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
+				.date(LocalDate.parse(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
 				.hour(0)
 				.newUser(10L)
 				.churnUser(12L)
@@ -555,7 +555,7 @@ class HourlyDataCommandControllerTest {
 		void invalidHourUpdateFail() throws Exception {
 
 			HourlyInfoRequestDto.UpdateRequest underZeroHour = HourlyInfoRequestDto.UpdateRequest.builder()
-					.date(LocalDate.parse(LocalDate.now().plusDays(1).format( DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
+				.date(LocalDate.parse(LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))))
 				.date(LocalDate.parse("2022-12-01", DateTimeFormatter.ofPattern("yyyy-MM-dd")))
 				.hour(-1)
 				.newUser(10L)
@@ -575,8 +575,8 @@ class HourlyDataCommandControllerTest {
 				.salesAmount(BigDecimal.valueOf(10L))
 				.build();
 
-			String underZeroData= objectMapper.writeValueAsString(underZeroHour);
-			String overMaxData= objectMapper.writeValueAsString(overMaxHour);
+			String underZeroData = objectMapper.writeValueAsString(underZeroHour);
+			String overMaxData = objectMapper.writeValueAsString(overMaxHour);
 
 			mock.perform(
 					put("/api/hourly-data")

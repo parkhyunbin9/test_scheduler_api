@@ -1,7 +1,6 @@
 package com.daou.batch.job;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
-import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.database.JpaPagingItemReader;
@@ -29,7 +27,7 @@ import com.daou.batch.repository.HourlyRowDataRepository;
 
 @SpringBatchTest
 @SpringBootTest(classes = {CleanHourlyDataConfiguration.class, TestBatchConfig.class},
-properties = "spring.profiles.active=test")
+	properties = "spring.profiles.active=test")
 class CleanHourlyDataConfigurationTest {
 
 	static LocalDate TEST_DATE = LocalDate.now().minusDays(-1);

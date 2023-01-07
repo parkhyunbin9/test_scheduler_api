@@ -10,13 +10,14 @@ import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.stereotype.Component;
 
+import com.daou.api.model.User;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
-import com.daou.api.model.User;
 
 @Slf4j
 @Component

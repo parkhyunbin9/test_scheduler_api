@@ -8,8 +8,9 @@ import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindException;
 
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.dto.HourlyRowDataDto;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component

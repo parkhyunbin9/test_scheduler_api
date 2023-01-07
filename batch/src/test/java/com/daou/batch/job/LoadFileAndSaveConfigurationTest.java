@@ -32,7 +32,8 @@ import com.daou.batch.repository.HourlyRowDataRepository;
 import com.daou.batch.writer.RowDataWriter;
 
 @SpringBatchTest
-@SpringBootTest(classes = {LoadFileAndSaveConfiguration.class, TestBatchConfig.class, FileManager.class, FileFromPathReader.class, RowDataWriter.class},
+@SpringBootTest(classes = {LoadFileAndSaveConfiguration.class, TestBatchConfig.class, FileManager.class,
+	FileFromPathReader.class, RowDataWriter.class},
 	properties = "spring.profiles.active=test")
 class LoadFileAndSaveConfigurationTest {
 

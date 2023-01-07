@@ -1,15 +1,12 @@
 package com.daou.api.controller;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.ConstraintViolationException;
 
-import org.springframework.beans.TypeMismatchException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -17,11 +14,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
-import lombok.extern.slf4j.Slf4j;
 import com.daou.api.common.spec.CommonErrorCode;
 import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.CommonResponse;
 import com.daou.api.common.spec.ExceptionCode;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestControllerAdvice
@@ -34,14 +32,14 @@ public class ExceptionController {
 		CommonErrorCode error = e.toErrorCode();
 
 		return CommonResponse
-				.builder()
-				.success(false)
-				.error(error)
-				.build();
+			.builder()
+			.success(false)
+			.error(error)
+			.build();
 	}
 
 	@ExceptionHandler(IllegalArgumentException.class)
-	public CommonResponse handleIllegalArgumentException (IllegalArgumentException e) {
+	public CommonResponse handleIllegalArgumentException(IllegalArgumentException e) {
 		log.error(e.getMessage(), e);
 		ExceptionCode alreadyRegisteredUsers = ExceptionCode.ALREADY_REGISTERED_USERS;
 		return CommonResponse
@@ -62,6 +60,7 @@ public class ExceptionController {
 			.error(authFail.getErrorCode())
 			.build();
 	}
+
 	@ExceptionHandler(value = ConstraintViolationException.class)
 	public CommonResponse handleConstraintViolationException(ConstraintViolationException e) {
 		log.error(e.getMessage(), e);

@@ -14,8 +14,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.job.LoadFileAndSaveConfiguration;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
@@ -29,8 +30,8 @@ public class FileManager {
 
 	public void zipOriginFile() throws IOException {
 		String allFilePath = readPath + "/*.*";
-		File saveFile = new File(filePath+"/success/"+
-		//Paths.get(filePath, "success",
+		File saveFile = new File(filePath + "/success/" +
+			//Paths.get(filePath, "success",
 			LoadFileAndSaveConfiguration.TX_DATE + ".zip");
 		log.info(String.valueOf(saveFile.getAbsoluteFile()));
 		log.info(saveFile.getPath());

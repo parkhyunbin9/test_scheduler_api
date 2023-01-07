@@ -23,13 +23,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import com.daou.batch.common.DayUnit;
 import com.daou.batch.common.service.SlackService;
 import com.daou.batch.dto.DailySummaryDto;
 import com.daou.batch.model.DailySummary;
 import com.daou.batch.repository.DailySummaryRepository;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -49,17 +50,16 @@ public class DailySummaryConfiguration {
 		return new SimpleJobBuilder(jobBuilderFactory.get(JOB_NAME)
 			.incrementer(new RunIdIncrementer()))
 			.start(dailySummary())
-				.on(ExitStatus.FAILED.getExitCode())
-				.to(processError(null))
-				.on("*")
-				.end()
+			.on(ExitStatus.FAILED.getExitCode())
+			.to(processError(null))
+			.on("*")
+			.end()
 			.from(dailySummary())
-				.on("*")
-				.end()
+			.on("*")
+			.end()
 			.end()
 			.build();
 	}
-
 
 	@Bean(name = JOB_NAME + "Step")
 	public Step dailySummary() throws Exception {
@@ -109,7 +109,7 @@ public class DailySummaryConfiguration {
 
 	@JobScope
 	@Bean(JOB_NAME + ERROR_PROCESSOR)
-	public Step processError( @Value("#{jobParameters[batchDate]}") String batchDate) {
+	public Step processError(@Value("#{jobParameters[batchDate]}") String batchDate) {
 		return stepBuilderFactory.get("errorProcessor" + batchDate).allowStartIfComplete(true)
 			.tasklet(((contribution, chunkContext) -> {
 				String errorMessage = JOB_NAME + " 배치 요청일 : " + batchDate + " 에러 발생";

@@ -1,9 +1,10 @@
 package com.daou.api.common.spec;
 
+import org.springframework.http.HttpStatus;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
-import org.springframework.http.HttpStatus;
 
 @ToString
 @Getter
