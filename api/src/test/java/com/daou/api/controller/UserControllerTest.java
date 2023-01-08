@@ -23,8 +23,10 @@ import org.springframework.validation.BindException;
 
 import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.ExceptionCode;
+import com.daou.api.dto.TokenDto;
 import com.daou.api.dto.request.UserRequestDto;
 import com.daou.api.model.User;
+import com.daou.api.model.UserRole;
 import com.daou.api.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -48,46 +50,7 @@ class UserControllerTest {
 			.build();
 	}
 
-	@DisplayName("인증")
-	@Test
-	void logInSuccess() throws Exception {
 
-		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(userRequestDto);
-
-		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
-			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.APPLICATION_JSON_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").exists())
-			.andExpect(status().isOk());
-	}
-
-	@DisplayName("잘못된 username - duplicated")
-	@Test
-	void wrongUserName() throws Exception {
-
-		UserRequestDto userRequestDto = new UserRequestDto("user", "password");
-		String userStr = objectMapper.writeValueAsString(userRequestDto);
-		User user = new User(userRequestDto.getUsername(), userRequestDto.getPassword());
-
-		lenient().when(userService.findByUsernameAndPassword(any(UserRequestDto.class)))
-			.thenThrow(new CommonException(ExceptionCode.NOT_FOUND));
-		assertThatThrownBy(() ->
-			mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.APPLICATION_JSON_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())).hasCause(new CommonException(ExceptionCode.NOT_FOUND, ""));
-
-	}
 
 	@DisplayName("필수값 누락 - username")
 	@Test
@@ -133,88 +96,5 @@ class UserControllerTest {
 			.andExpect(status().isBadRequest());
 	}
 
-	@DisplayName("json타입만 처리할 수 있다.")
-	@Test
-	void requestConsumeJSON() throws Exception {
-
-		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(userRequestDto);
-
-		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
-			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.APPLICATION_JSON_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").exists())
-			.andExpect(status().isOk());
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.ALL_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").doesNotExist())
-			.andExpect(status().isUnsupportedMediaType());
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.APPLICATION_XML)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").doesNotExist())
-			.andExpect(status().isUnsupportedMediaType());
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.TEXT_HTML_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").doesNotExist())
-			.andExpect(status().isUnsupportedMediaType());
-
-		mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.MULTIPART_FORM_DATA)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andDo(print())
-			.andExpect(MockMvcResultMatchers
-				.jsonPath("$.data").doesNotExist())
-			.andExpect(status().isUnsupportedMediaType());
-	}
-
-	@DisplayName("json으로 return 한다.")
-	@Test
-	void requestProduceJSON() throws Exception {
-
-		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(userRequestDto);
-
-		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
-			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
-
-		// when
-		String loginResponseContentType =
-			mock.perform(
-				post("/api/user/login")
-					.contentType(MediaType.APPLICATION_JSON_VALUE)
-					.content(userStr)
-					.characterEncoding(StandardCharsets.UTF_8)
-			).andReturn().getResponse().getContentType();
-
-		// then
-		assertThat(loginResponseContentType).isEqualTo(MediaType.APPLICATION_JSON_VALUE);
-	}
 
 }

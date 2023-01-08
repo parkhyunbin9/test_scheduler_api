@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Refill;
-
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -35,6 +33,5 @@ public class RateLimitBucketManager {
 	public Bucket getBucket() {
 		return bucket;
 	}
-
 
 }

@@ -11,13 +11,13 @@ import lombok.Getter;
 @Getter
 public class HourlyDataDto {
 
-	private LocalDate date;
-	private int hour;
-	private Long newUser;
-	private Long churnUser;
-	private BigDecimal payAmount;
-	private BigDecimal cost;
-	private BigDecimal salesAmount;
+	private final LocalDate date;
+	private final int hour;
+	private final Long newUser;
+	private final Long churnUser;
+	private final BigDecimal payAmount;
+	private final BigDecimal cost;
+	private final BigDecimal salesAmount;
 	private LocalDate createdDate;
 	private LocalDate lastModifiedDate;
 

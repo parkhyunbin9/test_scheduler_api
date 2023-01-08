@@ -9,7 +9,6 @@ import com.daou.api.model.HourlyData;
 
 public interface HourlyDataRepository extends JpaRepository<HourlyData, Long>, HourlyDataRepositoryCustom {
 
-
 	void deleteByDate(LocalDate date);
 
 	Optional<HourlyData> findByDateAndHour(LocalDate date, int hour);

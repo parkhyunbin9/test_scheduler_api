@@ -26,11 +26,10 @@ class IpManagerTest {
 	void denyNotAllowIp() {
 		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.1", "120.100.12.1"});
 
-		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
+		ReflectionTestUtils.setField(ipManager, "whiteList", testIpList);
 
 		assertThat(ipManager.allow("127.1.1.1")).isTrue();
 		assertThat(ipManager.allow("127.1.1.0")).isFalse();
-
 
 	}
 
@@ -38,12 +37,11 @@ class IpManagerTest {
 	@Test
 	void denyIpNotInRange() {
 		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.1/3", "120.100.12.1"});
-		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
+		ReflectionTestUtils.setField(ipManager, "whiteList", testIpList);
 		assertThat(ipManager.allow("127.1.1.1")).isTrue();
 		assertThat(ipManager.allow("127.1.1.2")).isTrue();
 		assertThat(ipManager.allow("127.1.1.3")).isTrue();
 		assertThat(ipManager.allow("127.1.1.0")).isFalse();
-
 
 	}
 
@@ -51,13 +49,12 @@ class IpManagerTest {
 	@Test
 	void allowStarPattern() {
 		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.*", "120.100.12.1"});
-		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
+		ReflectionTestUtils.setField(ipManager, "whiteList", testIpList);
 		assertThat(ipManager.allow("127.1.1.1")).isTrue();
 		assertThat(ipManager.allow("127.1.1.2")).isTrue();
 		assertThat(ipManager.allow("127.1.1.3")).isTrue();
 		assertThat(ipManager.allow("127.1.1.0")).isTrue();
 		assertThat(ipManager.allow("127.1.2.0")).isFalse();
-
 
 	}
 }

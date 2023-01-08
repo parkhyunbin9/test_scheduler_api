@@ -82,7 +82,7 @@ public class BatchScheduler {
 			slackService.postError(e.getMessage(), Arrays.toString(e.getStackTrace()));
 			throw new RuntimeException(e);
 		}
-		slackService.postSlackMessage(LocalDate.now().toString() + " 작업이 종료되었습니다.");
+		slackService.postSlackMessage(LocalDate.now() + " 작업이 종료되었습니다.");
 	}
 
 }

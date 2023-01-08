@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.daou.api.common.security.AuthConst;
@@ -32,15 +31,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfiguration implements WebMvcConfigurer {
 
-	private String basePackage;
-	private String groupName;
-	private String title;
-	private String description;
-
 	public static String[] swaggerPattern = {
 		"/api/v2/**", "/health", "/swagger-ui.html", "/swagger/**"
 		, "/swagger-resources/**", "/webjars/**", "/v2/api-docs"
 	};
+	private String basePackage;
+	private String groupName;
+	private String title;
+	private String description;
 
 	@Bean
 	public Docket api() {

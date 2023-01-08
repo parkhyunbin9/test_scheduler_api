@@ -20,7 +20,7 @@
 파일 형식과 구분자는 FileType Enum에 명시되어 있습니다.
   
 
-- 기본 H2 Database는 ```DB이름: Test  Username:sa  password:1234```에서 동작합니다. 
+- 기본 H2 Database는 ```DB이름: test  Username:sa  password:1234```에서 동작합니다. 
   
 
 - Swagger를 이용하여 테스트를 하실때 먼저 로그인을 수행하여 토을 발급받아야합니다.

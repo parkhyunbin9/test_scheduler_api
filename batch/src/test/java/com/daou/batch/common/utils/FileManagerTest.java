@@ -50,7 +50,7 @@ class FileManagerTest {
 	@DisplayName("특정 경로의 파일을 압축")
 	@Test
 	void zipFileFromPath() throws IOException {
-		String zipFileName = LocalDate.now().toString() + ".zip";
+		String zipFileName = LocalDate.now() + ".zip";
 		Path savedPath = Paths.get("src", "test", "data");
 		assertThat(Arrays.toString(savedPath.toFile().list())).contains(testFile);
 

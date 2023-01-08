@@ -32,7 +32,7 @@ public class IpFilter implements Filter {
 		throws IOException, ServletException {
 		boolean isAllow = false;
 		if (request instanceof HttpServletRequest) {
-			HttpServletRequest httpRequest = (HttpServletRequest) request;
+			HttpServletRequest httpRequest = (HttpServletRequest)request;
 			isAllow = ipManager.allow(httpRequest);
 		}
 

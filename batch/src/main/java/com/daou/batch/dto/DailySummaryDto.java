@@ -11,27 +11,27 @@ import lombok.Getter;
 @Getter
 public class DailySummaryDto {
 
-	private LocalDate date;
-	private Long sumNewUser;
-	private Long sumChurnUser;
-	private BigDecimal sumPayAmount;
-	private BigDecimal sumCost;
-	private BigDecimal sumSalesAmount;
-	private Double avgNewUser;
-	private Double avgChurnUser;
-	private Double avgPayAmount;
-	private Double avgCost;
-	private Double avgSalesAmount;
-	private Long maxNewUser;
-	private Long maxChurnUser;
-	private BigDecimal maxPayAmount;
-	private BigDecimal maxCost;
-	private BigDecimal maxSalesAmount;
-	private Long minNewUser;
-	private Long minChurnUser;
-	private BigDecimal minPayAmount;
-	private BigDecimal minCost;
-	private BigDecimal minSalesAmount;
+	private final LocalDate date;
+	private final Long sumNewUser;
+	private final Long sumChurnUser;
+	private final BigDecimal sumPayAmount;
+	private final BigDecimal sumCost;
+	private final BigDecimal sumSalesAmount;
+	private final Double avgNewUser;
+	private final Double avgChurnUser;
+	private final Double avgPayAmount;
+	private final Double avgCost;
+	private final Double avgSalesAmount;
+	private final Long maxNewUser;
+	private final Long maxChurnUser;
+	private final BigDecimal maxPayAmount;
+	private final BigDecimal maxCost;
+	private final BigDecimal maxSalesAmount;
+	private final Long minNewUser;
+	private final Long minChurnUser;
+	private final BigDecimal minPayAmount;
+	private final BigDecimal minCost;
+	private final BigDecimal minSalesAmount;
 
 	@QueryProjection
 	public DailySummaryDto(LocalDate date, Long sumNewUser, Long sumChurnUser, BigDecimal sumPayAmount,

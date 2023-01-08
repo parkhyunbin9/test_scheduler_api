@@ -1,39 +1,17 @@
 package com.daou.api.common.manager;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.web.util.matcher.IpAddressMatcher;
 import org.springframework.stereotype.Component;
-
-import lombok.RequiredArgsConstructor;
 
 @Component
 public class IpManager {
 	@Value(value = "${auth.allowIp}")
-	private List<String > whiteList;
-
-	public boolean allow(String requestIp) {
-		return whiteList.stream().anyMatch(allowIp -> {
-				try {
-					if(allowIp.contains("*") || allowIp.contains("/")){
-						return checkIpBand(allowIp, requestIp);
-					} else return allowIp.matches(requestIp);
-				} catch (Exception e) {
-					throw new RuntimeException(e);
-				}
-			});
-	}
-
-	public boolean allow(HttpServletRequest request) {
-		String clientIp = getClientIp(request);
-		return allow(clientIp);
-	}
+	private List<String> whiteList;
 
 	public static String getClientIp(HttpServletRequest request) {
 		String ip = StringUtils.trimToNull(request.getHeader("X-Forwarded-For"));
@@ -80,7 +58,25 @@ public class IpManager {
 		return ip;
 	}
 
-	public boolean checkIpBand( String ip, String userIp ) throws Exception {
+	public boolean allow(String requestIp) {
+		return whiteList.stream().anyMatch(allowIp -> {
+			try {
+				if (allowIp.contains("*") || allowIp.contains("/")) {
+					return checkIpBand(allowIp, requestIp);
+				} else
+					return allowIp.matches(requestIp);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		});
+	}
+
+	public boolean allow(HttpServletRequest request) {
+		String clientIp = getClientIp(request);
+		return allow(clientIp);
+	}
+
+	public boolean checkIpBand(String ip, String userIp) throws Exception {
 
 		boolean result = true;
 		String[] ipArr = ip.split("\\.");
@@ -98,7 +94,9 @@ public class IpManager {
 						tResult = true;
 					}
 				}
-				if (!tResult) {result = false;}
+				if (!tResult) {
+					result = false;
+				}
 			} else {
 				if (!ipArr[i].equals(userIpArr[i]) && !ipArr[i].equals("*")) {
 					result = false;

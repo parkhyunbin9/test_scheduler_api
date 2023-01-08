@@ -1,19 +1,11 @@
 package com.daou.api.common.security;
 
 import java.security.Key;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,7 +22,6 @@ import com.daou.api.dto.TokenDto;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -43,13 +34,11 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class TokenProvider {
 
+	private final Key key;
 	@Value(value = "${jwt.access-token-expire-sec}")
 	private long ACCESS_TOKEN_EXPIRE_SEC;
-
 	@Value(value = "${jwt.refresh-token-expire-sec}")
 	private long REFRESH_TOKEN_EXPIRE_SEC;
-
-	private final Key key;
 
 	public TokenProvider(@Value(value = "${jwt.secret-key}") String secretKey) {
 		byte[] decodedKey = Decoders.BASE64.decode(secretKey);
@@ -92,7 +81,8 @@ public class TokenProvider {
 			throw new CommonException(ExceptionCode.INVALID_TOKEN_NO_AUTHORITY);
 		}
 
-		Collection<? extends GrantedAuthority> authorities= Arrays.stream(claims.get(AuthConst.AUTH_KEY).toString().split(","))
+		Collection<? extends GrantedAuthority> authorities = Arrays.stream(
+				claims.get(AuthConst.AUTH_KEY).toString().split(","))
 			.map(SimpleGrantedAuthority::new)
 			.collect(Collectors.toList());
 

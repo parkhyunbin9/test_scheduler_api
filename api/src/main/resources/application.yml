@@ -67,6 +67,6 @@ jwt:
   refresh-token-expire-sec: 86400000  # 1 day
 
 rate-limit:
-  duration-sec : 600 #10 min
-  token-count : 100
-  capacity : 100
+  duration-sec: 600 #10 min
+  token-count: 100
+  capacity: 100

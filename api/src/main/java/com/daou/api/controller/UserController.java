@@ -28,7 +28,7 @@ public class UserController {
 
 	@ApiOperation(value = "로그인")
 	@PostMapping(value = "login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public CommonResponse logIn(@Validated @RequestBody UserRequestDto userRequestDto) {
+	public CommonResponse login(@Validated @RequestBody UserRequestDto userRequestDto) {
 		return CommonResponse.builder().data(userService.login(userRequestDto)).build();
 	}
 
@@ -43,6 +43,5 @@ public class UserController {
 	public CommonResponse reissue(@Validated @RequestBody TokenRequestDto tokenRequestDto) {
 		return CommonResponse.builder().data(userService.reissue(tokenRequestDto)).build();
 	}
-
 
 }

@@ -38,7 +38,7 @@ public class SlackService {
 	}
 
 	public void postError(String message, String stackTrace) {
-		postSlackMessage("배치 스케줄 진행 중 에러 발생 배치 동작 일 = " + LocalDate.now().toString());
+		postSlackMessage("배치 스케줄 진행 중 에러 발생 배치 동작 일 = " + LocalDate.now());
 		postSlackMessage("에러 메세지 = " + message);
 		postSlackMessage("에러 StackTrace = " + stackTrace);
 	}

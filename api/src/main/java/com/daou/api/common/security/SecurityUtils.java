@@ -5,15 +5,13 @@ import java.util.Objects;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.daou.api.common.spec.CommonException;
-import com.daou.api.common.spec.ExceptionCode;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SecurityUtils {
 
-	private SecurityUtils() {}
+	private SecurityUtils() {
+	}
 
 	public static Long getCurrentUserId() {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

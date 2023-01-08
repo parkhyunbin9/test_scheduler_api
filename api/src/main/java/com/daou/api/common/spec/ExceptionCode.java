@@ -25,7 +25,7 @@ public enum ExceptionCode {
 
 	ALREADY_REGISTERED_USERS("AlreadyRegisteredUsers", "이미 등록된 유저", HttpStatus.BAD_REQUEST),
 	ALREADY_AGGREGATED_DATA("AlreadyAggregateData", "이미 집계된 데이터", HttpStatus.BAD_REQUEST),
-	LOGOUT_USER("LogoutUser","이미 로그아웃한 유저",HttpStatus.BAD_REQUEST);
+	LOGOUT_USER("LogoutUser", "이미 로그아웃한 유저", HttpStatus.BAD_REQUEST);
 	private final String errorCode;
 	private final String errorMessage;
 	private final HttpStatus errorStatus;
