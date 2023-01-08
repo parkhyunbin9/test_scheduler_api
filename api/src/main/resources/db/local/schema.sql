@@ -96,3 +96,12 @@ create table users (
     username varchar(50) not null,
     primary key (user_id)
 );
+
+drop table if exists refresh_token CASCADE;
+create table refresh_token (
+    created_date date default current_timestamp,
+    last_modified_date date default current_timestamp,
+    refresh_token_key varchar(255) not null,
+    refresh_token_value varchar(255) not null,
+    primary key (refresh_token_key)
+);

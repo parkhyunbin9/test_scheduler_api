@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.daou.api.common.security.AuthConstant;
+import com.daou.api.common.security.AuthConst;
 import com.google.common.reflect.TypeResolver;
 
 import io.swagger.annotations.ApiModel;
@@ -36,6 +36,11 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
 	private String groupName;
 	private String title;
 	private String description;
+
+	public static String[] swaggerPattern = {
+		"/api/v2/**", "/health", "/swagger-ui.html", "/swagger/**"
+		, "/swagger-resources/**", "/webjars/**", "/v2/api-docs"
+	};
 
 	@Bean
 	public Docket api() {
@@ -69,7 +74,7 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
 	}
 
 	private ApiKey apiKey() {
-		return new ApiKey("JWT", AuthConstant.AUTH_HEADER, "header");
+		return new ApiKey("JWT", AuthConst.AUTH_HEADER, "header");
 	}
 
 	private SecurityContext securityContext() {

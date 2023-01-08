@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.daou.api.common.security.JwtTokenUtils;
 import com.daou.api.common.spec.CommonResponse;
-import com.daou.api.dto.request.AuthRequestDto;
-import com.daou.api.model.User;
+import com.daou.api.dto.request.TokenRequestDto;
+import com.daou.api.dto.request.UserRequestDto;
 import com.daou.api.service.UserService;
 
 import io.swagger.annotations.Api;
@@ -27,11 +26,23 @@ public class UserController {
 
 	private final UserService userService;
 
-	@ApiOperation(value = "Login")
+	@ApiOperation(value = "로그인")
 	@PostMapping(value = "login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public CommonResponse logIn(@Validated @RequestBody AuthRequestDto authRequestDto) {
-		User logInUser = userService.findByUsernameAndPassword(authRequestDto);
-		return CommonResponse.builder().data(JwtTokenUtils.generateToken(logInUser)).build();
+	public CommonResponse logIn(@Validated @RequestBody UserRequestDto userRequestDto) {
+		return CommonResponse.builder().data(userService.login(userRequestDto)).build();
 	}
+
+	@ApiOperation(value = "회원가입")
+	@PostMapping(value = "sign-up", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public CommonResponse signup(@Validated @RequestBody UserRequestDto userRequestDto) {
+		return CommonResponse.builder().data(userService.signUp(userRequestDto)).build();
+	}
+
+	@ApiOperation(value = "토큰 재발급")
+	@PostMapping(value = "re-issue", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public CommonResponse reissue(@Validated @RequestBody TokenRequestDto tokenRequestDto) {
+		return CommonResponse.builder().data(userService.reissue(tokenRequestDto)).build();
+	}
+
 
 }

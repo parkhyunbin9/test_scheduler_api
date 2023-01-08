@@ -49,32 +49,6 @@ public class LoadFileAndSaveConfiguration {
 	private final SlackService slackService;
 	private final FileManager fileManager;
 
-	/**
-	 * TODO: 2. 실패시 처리 하지 않음 (transaction) 0
-	 * TODO: 3. 로깅
-	 * TODO: 4. 실패시 slack api 호출로 노티 0
-	 * TODO: 5. DTO 분류 0
-	 * TODO: 5. 기능별 테스트 케이스 작성
-	 *
-	 * 테스트 케이스 추가 +  1차 집계가 끝나고 2차 날짜별 시간대별 중복값 sum해서 집계
-	 * 날짜별 시간대별 독립적인 값을 가지도록
-	 * 1. row data 생성 기본 집계 > 종료시 압축하여 /success / date.zip파일로 저장
-	 * 1. 날짜별 시간대별 데이터 1차 집계
-	 * 2. 시간대별 데이터 (24row) 누적 2차 집계
-	 * 3. 날짜별 데이터  2차 집계
-	 *
-	 * 파이프 라인 기본 집계 -> 1차 집계 -> 2차 집계 순으로 동작
-	 *
-	 * 1. 테스트할 항목 제대로 validation 동작하는지
-	 * 2. validation시 롤백 되는지
-	 * 3. 에러시 롤백 처리 잘 되는지
-	 * 4. 압축 파일이 잘 생성되는지
-	 * 5. 압축 파일내 원래 있던 파일 명들이 다 있는지
-	 * 6. 원래있던 파일들이 잘 제거 되는지
-	 * 7. 로드된 파일 데이터들이 잘 적재되는 지
-	 * 8. 이력들이 제대로 저장되는지
-	 */
-
 	@Bean(name = JOB_NAME)
 	public Job loadAndSaveProcess() throws Exception {
 
@@ -93,8 +67,6 @@ public class LoadFileAndSaveConfiguration {
 				.to(processError(null))
 				.on("*")
 				.end();
-
-			// 스텝을 순회하며 수행하는데 실패시 에러 처리 후 실패 /그외는 성공
 		}
 
 		return job

@@ -12,7 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.ExceptionCode;
-import com.daou.api.dto.request.AuthRequestDto;
+import com.daou.api.dto.request.UserRequestDto;
 import com.daou.api.model.User;
 import com.daou.api.repository.UserRepository;
 
@@ -30,7 +30,7 @@ class UserServiceTest {
 	void findUserByUsernameAndPassword() {
 
 		// given
-		AuthRequestDto testData = new AuthRequestDto("testUser", "testPassword");
+		UserRequestDto testData = new UserRequestDto("testUser", "testPassword");
 		User expectUser = new User(testData.getUsername(), testData.getPassword());
 		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(
 			expectUser);
@@ -47,7 +47,7 @@ class UserServiceTest {
 	void noUser() {
 
 		// given
-		AuthRequestDto testData = new AuthRequestDto("noUser", "noUser");
+		UserRequestDto testData = new UserRequestDto("noUser", "noUser");
 		User expectUser = null;
 		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(
 			expectUser);

@@ -111,7 +111,6 @@ public class ExceptionController {
 	@ExceptionHandler(Exception.class)
 	public CommonResponse handleDefaultException(Exception e) {
 
-		// exceptionCode에 명시하지 않은 에러 처리
 		log.error(e.getMessage(), e);
 		log.info("Default EXCEPTION!!!");
 

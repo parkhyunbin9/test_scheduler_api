@@ -4,8 +4,10 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class AuthConstant {
+public class AuthConst {
 
 	public static final String AUTH_HEADER = "Authorization";
-	public static final String TOKEN_TYPE = "BEARER";
+	public static final String AUTH_KEY = "auth";
+	public static final String BEARER_TYPE = "BEARER";
+	public static final String BEARER_PREFIX = "Bearer ";
 }

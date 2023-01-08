@@ -14,16 +14,18 @@ public enum ExceptionCode {
 	NOT_FOUND("ResourceNotFound", "요청 데이터 없음", HttpStatus.NOT_FOUND),
 
 	// REQUEST
-	INVALID_ID_AND_PASSWORD("InvalidIdAndPW", "ID와 패스워드가 올바르지 않습니다.", HttpStatus.BAD_REQUEST),
-	INVALID_REQUEST_IP("InvalidRequestIp", "허가되지 않은 IP 주소 입니다.", HttpStatus.FORBIDDEN),
+	INVALID_ID_AND_PASSWORD("InvalidIdAndPW", "ID와 패스워드 불일치", HttpStatus.BAD_REQUEST),
+	INVALID_REQUEST_IP("InvalidRequestIp", "허가되지 않은 IP 주소", HttpStatus.FORBIDDEN),
+	INVALID_TOKEN_NO_AUTHORITY("InvalidToken", "권한 정보가 없는 토큰", HttpStatus.FORBIDDEN),
+	INVALID_TOKEN("InvalidToken", "유효하지 않은 토큰입니다.", HttpStatus.BAD_REQUEST),
 	TOO_MANY_REQUEST("TooManyRequest", "요청 횟수 초과", HttpStatus.TOO_MANY_REQUESTS),
 	ILLEGAL_REQUEST_BODY("IllegamRequestBody", "잘못된 입력값", HttpStatus.BAD_REQUEST),
 	AUTH_FAIL("AuthFail", "인증 실패", HttpStatus.BAD_REQUEST),
 	NO_PERMISSION("NoPermission", "접근 권한이 없음", HttpStatus.FORBIDDEN),
 
 	ALREADY_REGISTERED_USERS("AlreadyRegisteredUsers", "이미 등록된 유저", HttpStatus.BAD_REQUEST),
-	ALREADY_AGGREGATED_DATA("AlreadyAggregateData", "이미 집계된 데이터", HttpStatus.BAD_REQUEST);
-
+	ALREADY_AGGREGATED_DATA("AlreadyAggregateData", "이미 집계된 데이터", HttpStatus.BAD_REQUEST),
+	LOGOUT_USER("LogoutUser","이미 로그아웃한 유저",HttpStatus.BAD_REQUEST);
 	private final String errorCode;
 	private final String errorMessage;
 	private final HttpStatus errorStatus;

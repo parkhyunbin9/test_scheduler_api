@@ -7,7 +7,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.daou.api.common.interceptor.IpAddressInterceptor;
-import com.daou.api.common.interceptor.JwtTokenInterceptor;
 import com.daou.api.common.interceptor.RateLimitInterceptor;
 import com.daou.api.common.interceptor.RequestInterceptor;
 
@@ -17,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
 
-	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/static/",
+	public static final String[] CLASSPATH_RESOURCE_LOCATIONS = {"classpath:/static/",
 		"classpath:/public/", "classpath:/resources/", "classpath:/META-INF/resources/webjars/",
 		"classpath:/META-INF/resources/", "classpath:/"};
 	private final IpAddressInterceptor ipAddressInterceptor;
@@ -31,10 +30,6 @@ public class WebConfig implements WebMvcConfigurer {
 			.order(1)
 			.addPathPatterns("/api/**");
 
-		// 인증 interceptor
-		registry.addInterceptor(jwtTokenInterceptor())
-			.order(2)
-			.addPathPatterns("/api/**");
 		// ip whiteList interceptor
 		registry.addInterceptor(ipAddressInterceptor)
 			.order(3)
@@ -45,10 +40,6 @@ public class WebConfig implements WebMvcConfigurer {
 			.addPathPatterns("/api/hello");
 	}
 
-	@Bean
-	public JwtTokenInterceptor jwtTokenInterceptor() {
-		return new JwtTokenInterceptor();
-	}
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -23,7 +23,7 @@ import org.springframework.validation.BindException;
 
 import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.ExceptionCode;
-import com.daou.api.dto.request.AuthRequestDto;
+import com.daou.api.dto.request.UserRequestDto;
 import com.daou.api.model.User;
 import com.daou.api.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,11 +52,11 @@ class UserControllerTest {
 	@Test
 	void logInSuccess() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
+		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
 
-		when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenReturn(
-			new User(authRequestDto.getUsername(), authRequestDto.getPassword()));
+		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
+			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
 
 		mock.perform(
 				post("/api/user/login")
@@ -73,11 +73,11 @@ class UserControllerTest {
 	@Test
 	void wrongUserName() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("user", "password");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
-		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
+		UserRequestDto userRequestDto = new UserRequestDto("user", "password");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
+		User user = new User(userRequestDto.getUsername(), userRequestDto.getPassword());
 
-		lenient().when(userService.findByUsernameAndPassword(any(AuthRequestDto.class)))
+		lenient().when(userService.findByUsernameAndPassword(any(UserRequestDto.class)))
 			.thenThrow(new CommonException(ExceptionCode.NOT_FOUND));
 		assertThatThrownBy(() ->
 			mock.perform(
@@ -93,11 +93,11 @@ class UserControllerTest {
 	@Test
 	void withoutUsernameFail() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("", "password");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
-		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
+		UserRequestDto userRequestDto = new UserRequestDto("", "password");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
+		User user = new User(userRequestDto.getUsername(), userRequestDto.getPassword());
 
-		lenient().when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenReturn(user);
+		lenient().when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(user);
 
 		mock.perform(
 				post("/api/user/login")
@@ -115,11 +115,11 @@ class UserControllerTest {
 	@Test
 	void withoutPasswordFail() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("username", "");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
-		User user = new User(authRequestDto.getUsername(), authRequestDto.getPassword());
+		UserRequestDto userRequestDto = new UserRequestDto("username", "");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
+		User user = new User(userRequestDto.getUsername(), userRequestDto.getPassword());
 
-		lenient().when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenReturn(user);
+		lenient().when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(user);
 
 		mock.perform(
 				post("/api/user/login")
@@ -137,11 +137,11 @@ class UserControllerTest {
 	@Test
 	void requestConsumeJSON() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
+		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
 
-		when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenReturn(
-			new User(authRequestDto.getUsername(), authRequestDto.getPassword()));
+		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
+			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
 
 		mock.perform(
 				post("/api/user/login")
@@ -198,11 +198,11 @@ class UserControllerTest {
 	@Test
 	void requestProduceJSON() throws Exception {
 
-		AuthRequestDto authRequestDto = new AuthRequestDto("user", "userPassword");
-		String userStr = objectMapper.writeValueAsString(authRequestDto);
+		UserRequestDto userRequestDto = new UserRequestDto("user", "userPassword");
+		String userStr = objectMapper.writeValueAsString(userRequestDto);
 
-		when(userService.findByUsernameAndPassword(any(AuthRequestDto.class))).thenReturn(
-			new User(authRequestDto.getUsername(), authRequestDto.getPassword()));
+		when(userService.findByUsernameAndPassword(any(UserRequestDto.class))).thenReturn(
+			new User(userRequestDto.getUsername(), userRequestDto.getPassword()));
 
 		// when
 		String loginResponseContentType =
