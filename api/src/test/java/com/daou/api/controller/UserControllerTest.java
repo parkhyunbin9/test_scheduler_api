@@ -21,12 +21,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.BindException;
 
-import com.daou.api.common.spec.CommonException;
-import com.daou.api.common.spec.ExceptionCode;
-import com.daou.api.dto.TokenDto;
 import com.daou.api.dto.request.UserRequestDto;
 import com.daou.api.model.User;
-import com.daou.api.model.UserRole;
 import com.daou.api.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -49,8 +45,6 @@ class UserControllerTest {
 		mock = MockMvcBuilders.standaloneSetup(userController)
 			.build();
 	}
-
-
 
 	@DisplayName("필수값 누락 - username")
 	@Test
@@ -95,6 +89,5 @@ class UserControllerTest {
 			.andExpect(result -> assertThat(result.getResolvedException()).isInstanceOf(BindException.class))
 			.andExpect(status().isBadRequest());
 	}
-
 
 }
