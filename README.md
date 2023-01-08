@@ -28,7 +28,7 @@
   ![로그인 결과](img/loginResult.png)
   2. 위와 같은 로그인 결과에서 access_token 값을 복사하여
   Bearer ${access_token}에서 access_token에 붙여넣습니다.
-  3. 해당 문자열을 이용하여 인증을 수행합니다. 아래의 인증 버튼에 누르고 입력해 주세요
+  3. 해당 문자열을 이용하여 인증을 수행합니다. 아래의 인증 버튼에 누르고 입력해 주세요.
   ![auth](img/auth.png)
  
 ---
