@@ -34,17 +34,8 @@ class UserServiceTest {
 
 	@InjectMocks
 	UserService userService;
-
 	@Mock
 	UserRepository userRepository;
-	@Mock
-	TokenProvider tokenProvider;
-	@Mock
-	AuthenticationManagerBuilder authenticationManagerBuilder;
-	@Autowired
-	RefreshTokenRepository refreshTokenRepository;
-	@Autowired
-	PasswordEncoder passwordEncoder;
 
 	@DisplayName("인증 정보로 유저 정보 가져온다")
 	@Test
