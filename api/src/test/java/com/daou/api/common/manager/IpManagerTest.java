@@ -1,45 +1,32 @@
 package com.daou.api.common.manager;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.web.util.matcher.IpAddressMatcher;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
 @ExtendWith(MockitoExtension.class)
-//@SpringBootTest(classes = {IpManager.class})
 class IpManagerTest {
 
 	@InjectMocks
 	IpManager ipManager;
 	@Mock
-	private List<IpAddressMatcher> whiteList;
+	private List<String> whiteList;
 
 	@DisplayName("등록된 아이피가 아니면 deny.")
 	@Test
-	void getIpListFromProfileAsHashSet() {
-		List<String> ipList = Arrays.asList(new String[] {"127.1.1.1", "120.100.12.1"});
-		List<IpAddressMatcher> testWhiteList = ipList.stream()
-			.map(IpAddressMatcher::new)
-			.collect(Collectors.toList());
+	void denyNotAllowIp() {
+		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.1", "120.100.12.1"});
 
-		ReflectionTestUtils.setField(ipManager,"whiteList", testWhiteList);
+		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
 
 		assertThat(ipManager.allow("127.1.1.1")).isTrue();
 		assertThat(ipManager.allow("127.1.1.0")).isFalse();
@@ -47,5 +34,30 @@ class IpManagerTest {
 
 	}
 
+	@DisplayName("범위내의 아이피에 속하지 않으면 아니면 deny.")
+	@Test
+	void denyIpNotInRange() {
+		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.1/3", "120.100.12.1"});
+		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
+		assertThat(ipManager.allow("127.1.1.1")).isTrue();
+		assertThat(ipManager.allow("127.1.1.2")).isTrue();
+		assertThat(ipManager.allow("127.1.1.3")).isTrue();
+		assertThat(ipManager.allow("127.1.1.0")).isFalse();
 
+
+	}
+
+	@DisplayName("모든 대역대의 아이피 허용.")
+	@Test
+	void allowStarPattern() {
+		List<String> testIpList = Arrays.asList(new String[] {"127.1.1.*", "120.100.12.1"});
+		ReflectionTestUtils.setField(ipManager,"whiteList", testIpList);
+		assertThat(ipManager.allow("127.1.1.1")).isTrue();
+		assertThat(ipManager.allow("127.1.1.2")).isTrue();
+		assertThat(ipManager.allow("127.1.1.3")).isTrue();
+		assertThat(ipManager.allow("127.1.1.0")).isTrue();
+		assertThat(ipManager.allow("127.1.2.0")).isFalse();
+
+
+	}
 }

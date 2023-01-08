@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class RateLimitInterceptor implements HandlerInterceptor {
 
 	private final RateLimitBucketManager bucketManager;
-
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws
 		Exception {

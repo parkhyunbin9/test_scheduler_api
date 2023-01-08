@@ -20,7 +20,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class WebConfig implements WebMvcConfigurer {
 
-	private final IpAddressInterceptor ipAddressInterceptor;
 	private final RateLimitInterceptor rateLimitInterceptor;
 	private final IpManager ipManager;
 

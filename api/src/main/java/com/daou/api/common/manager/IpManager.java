@@ -15,25 +15,19 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 public class IpManager {
-
+	@Value(value = "${auth.allowIp}")
 	private List<String > whiteList;
 
-	public IpManager(@Value(value = "${auth.allowIp}") List<String> allowIp) {
-		this.whiteList = allowIp;//.stream().map(IpAddressMatcher::new)
-			//.collect(Collectors.toList());
-	}
-
 	public boolean allow(String requestIp) {
-		if(requestIp.contains("/") || requestIp.contains("*"))  {
-			whiteList.stream().anyMatch(allowIp -> {
+		return whiteList.stream().anyMatch(allowIp -> {
 				try {
-					return checkIpBand(requestIp, allowIp);
+					if(allowIp.contains("*") || allowIp.contains("/")){
+						return checkIpBand(allowIp, requestIp);
+					} else return allowIp.matches(requestIp);
 				} catch (Exception e) {
 					throw new RuntimeException(e);
 				}
 			});
-		}
-		return whiteList.stream().anyMatch(allowIp -> allowIp.matches(requestIp));
 	}
 
 	public boolean allow(HttpServletRequest request) {
@@ -106,7 +100,7 @@ public class IpManager {
 				}
 				if (!tResult) {result = false;}
 			} else {
-				if (!ipArr[i].equals(userIpArr[i])) {
+				if (!ipArr[i].equals(userIpArr[i]) && !ipArr[i].equals("*")) {
 					result = false;
 					break;
 				}

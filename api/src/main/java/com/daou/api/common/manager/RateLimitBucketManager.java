@@ -2,24 +2,31 @@ package com.daou.api.common.manager;
 
 import java.time.Duration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Refill;
+
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
 public class RateLimitBucketManager {
 
-	private final Bucket bucket;
+	private int duration;
+	private int tokenCount;
+	private int capacity;
+	private Bucket bucket;
 
-	
-	public RateLimitBucketManager() {
-		// 1분에 10개 요청 처리  bucket
-		Bandwidth limit = Bandwidth.classic(10, Refill.greedy(10, Duration.ofMinutes(1)));
+	public RateLimitBucketManager(
+		@Value(value = "${rate-limit.duration-sec}") int duration,
+		@Value(value = "${rate-limit.token-count}") int tokenCount,
+		@Value(value = "${rate-limit.capacity}") int capacity) {
 
+		Bandwidth limit = Bandwidth.classic(capacity, Refill.greedy(tokenCount, Duration.ofSeconds(duration)));
 		this.bucket = Bucket.builder()
 			.addLimit(limit)
 			.build();
@@ -29,12 +36,5 @@ public class RateLimitBucketManager {
 		return bucket;
 	}
 
-	public void consumeToken() {
-		if (bucket.tryConsume(1)) {
-			log.info("TokenConsume Success RemainToken = {}", bucket.getAvailableTokens());
-		} else {
-			log.info("TOO MANY Request ");
-		}
 
-	}
 }
