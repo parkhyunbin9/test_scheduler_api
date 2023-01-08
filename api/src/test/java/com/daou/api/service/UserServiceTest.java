@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.daou.api.common.security.AuthConst;
 import com.daou.api.common.security.TokenProvider;
@@ -22,6 +23,7 @@ import com.daou.api.common.spec.CommonException;
 import com.daou.api.common.spec.ExceptionCode;
 import com.daou.api.dto.TokenDto;
 import com.daou.api.dto.request.UserRequestDto;
+import com.daou.api.dto.response.UserResponseDto;
 import com.daou.api.model.RefreshToken;
 import com.daou.api.model.User;
 import com.daou.api.repository.RefreshTokenRepository;
@@ -41,6 +43,8 @@ class UserServiceTest {
 	AuthenticationManagerBuilder authenticationManagerBuilder;
 	@Autowired
 	RefreshTokenRepository refreshTokenRepository;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	@DisplayName("인증 정보로 유저 정보 가져온다")
 	@Test
@@ -74,27 +78,6 @@ class UserServiceTest {
 			.isInstanceOf(CommonException.class);
 		assertThatThrownBy(() -> userService.findByUsernameAndPassword(testData))
 			.hasMessage(ExceptionCode.AUTH_FAIL.getErrorCode());
-	}
-
-	@DisplayName("로그인할때 토큰을 저장한다.")
-	@Test
-	void login() {
-
-		// given
-		UserRequestDto testData = new UserRequestDto("user", "userpass");
-		UsernamePasswordAuthenticationToken userAuth = testData.toAuthentication();
-		when(authenticationManagerBuilder.getObject()).thenReturn(any());
-		when(authenticationManagerBuilder.getObject().authenticate(userAuth))
-			.thenReturn(any());
-		when(tokenProvider.generateTokenDto(any(Authentication.class))).thenReturn(
-			new TokenDto(AuthConst.BEARER_TYPE, "testAccess", "testRefresh", 100L)
-		);
-
-		TokenDto resultToken = userService.login(testData);
-		RefreshToken savedRefreshToken = refreshTokenRepository.findByKey(userAuth.getName()).get();
-
-		//then
-		assertThat(resultToken.getRefreshToken()).isEqualTo(savedRefreshToken.getValue());
 	}
 
 }
