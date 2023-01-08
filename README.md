@@ -23,7 +23,7 @@
 - 기본 H2 Database는 ```DB이름: test  Username:sa  password:1234```에서 동작합니다. 
   
   
-- Ip필터가 설정되어 있으므로 http://127.0.0.1:8080/swagger-ui.html로 스웨거를 접속할 수 있습니다.
+- IP필터가 설정되어 있으므로 http://127.0.0.1:8080/swagger-ui.html로 스웨거를 접속할 수 있습니다.
   
 
 - Swagger를 이용하여 테스트를 하실때 먼저 로그인을 수행하여 토큰을 발급받아야합니다.
