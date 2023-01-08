@@ -90,20 +90,6 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
 		return Arrays.asList(new SecurityReference("JWT", authorizationScopes));
 	}
 
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/swagger-resources/**")
-			.addResourceLocations("classpath:/META-INF/resources/");
-		registry.addResourceHandler("swagger-ui.html")
-			.addResourceLocations("classpath:/META-INF/resources/");
-		registry.addResourceHandler("/webjars/**")
-			.addResourceLocations("classpath:/META-INF/resources/webjars/");
-		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css");
-		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
-		registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/images/");
-	}
-
 	@ApiModel
 	static class MyPagable {
 

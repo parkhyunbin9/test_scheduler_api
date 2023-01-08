@@ -29,19 +29,20 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 		Bucket bucket = bucketManager.getBucket();
 		ConsumptionProbe consumeResult = bucket.tryConsumeAndReturnRemaining(1);
 		if (consumeResult.isConsumed()) {
-			// 남은 요청수
+
 			response.addHeader("X-Rate-Limit-Remaining",
 				String.valueOf(consumeResult.getRemainingTokens()));
 			return true;
 		} else {
-			// 다음 리필까지 남은 시간
+
 			response.addHeader("Retry-after", String.valueOf(
 				TimeUnit.SECONDS.convert(consumeResult.getNanosToWaitForRefill(),
 					TimeUnit.NANOSECONDS)));
-			//요청 최댓값이 다시 찰때까지 시간
+
 			response.addHeader("X-Rate-Limit-Reset", String.valueOf(
 				TimeUnit.SECONDS.convert(consumeResult.getNanosToWaitForReset(),
 					TimeUnit.NANOSECONDS)));
+
 			response.sendError(HttpStatus.TOO_MANY_REQUESTS.value(),
 				"현재 요청을 처리할 수 없습니다. 잠시후에 시도해 주세요.");
 			return false;

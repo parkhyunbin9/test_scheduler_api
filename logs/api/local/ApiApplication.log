@@ -1,234 +1,166 @@
-[2023-01-08 03:07:42]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 85244 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
-[2023-01-08 03:07:43]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
-[2023-01-08 03:07:43]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2023-01-08 03:07:43]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 36 ms. Found 5 JPA repository interfaces.
-[2023-01-08 03:07:44]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
-[2023-01-08 03:07:44]-[INFO ]-[log]-Starting service [Tomcat]
-[2023-01-08 03:07:44]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
-[2023-01-08 03:07:44]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
-[2023-01-08 03:07:44]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1363 ms
-[2023-01-08 03:07:44]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
-[2023-01-08 03:07:44]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
-[2023-01-08 03:07:44]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[2023-01-08 03:07:45]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
-[2023-01-08 03:07:47]-[ERROR]-[throwPoolInitializationException]-HikariPool-1 - Exception during pool initialization.
-org.h2.jdbc.JdbcSQLNonTransientConnectionException: Connection is broken: "java.net.ConnectException: Connection refused (Connection refused): localhost" [90067-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:437)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:325)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.daou.api.ApiApplication.main(ApiApplication.java:19)
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.base/java.net.Socket.connect(Socket.java:609)
-	at org.h2.util.NetUtils.createSocket(NetUtils.java:135)
-	at org.h2.util.NetUtils.createSocket(NetUtils.java:99)
-	at org.h2.engine.SessionRemote.initTransfer(SessionRemote.java:130)
-	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:433)
-	... 49 common frames omitted
-[2023-01-08 03:07:47]-[WARN ]-[initiateService]-HHH000342: Could not obtain connection to query metadata
-org.h2.jdbc.JdbcSQLNonTransientConnectionException: Connection is broken: "java.net.ConnectException: Connection refused (Connection refused): localhost" [90067-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:437)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:325)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.daou.api.ApiApplication.main(ApiApplication.java:19)
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.base/java.net.Socket.connect(Socket.java:609)
-	at org.h2.util.NetUtils.createSocket(NetUtils.java:135)
-	at org.h2.util.NetUtils.createSocket(NetUtils.java:99)
-	at org.h2.engine.SessionRemote.initTransfer(SessionRemote.java:130)
-	at org.h2.engine.SessionRemote.connectServer(SessionRemote.java:433)
-	... 49 common frames omitted
-[2023-01-08 03:07:47]-[ERROR]-[buildNativeEntityManagerFactory]-Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-[2023-01-08 03:07:47]-[WARN ]-[refresh]-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-[2023-01-08 03:07:47]-[INFO ]-[log]-Stopping service [Tomcat]
-[2023-01-08 03:07:47]-[INFO ]-[logMessage]-
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-[2023-01-08 03:07:48]-[ERROR]-[reportFailure]-Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.daou.api.ApiApplication.main(ApiApplication.java:19)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
-	... 16 common frames omitted
-Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:138)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 33 common frames omitted
-[2023-01-08 03:08:51]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 85427 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
-[2023-01-08 03:08:51]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
-[2023-01-08 03:08:52]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2023-01-08 03:08:52]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
-[2023-01-08 03:08:52]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
-[2023-01-08 03:08:53]-[INFO ]-[log]-Starting service [Tomcat]
-[2023-01-08 03:08:53]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
-[2023-01-08 03:08:53]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
-[2023-01-08 03:08:53]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1445 ms
-[2023-01-08 03:08:53]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
-[2023-01-08 03:08:53]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
-[2023-01-08 03:08:53]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[2023-01-08 03:08:53]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
-[2023-01-08 03:08:54]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
-[2023-01-08 03:08:54]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-[2023-01-08 03:08:54]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-[2023-01-08 03:08:54]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2023-01-08 03:08:55]-[INFO ]-[<init>]-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@502f6f6a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64a0ee65, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e3552b0, org.springframework.security.web.header.HeaderWriterFilter@52d625bd, org.springframework.security.web.authentication.logout.LogoutFilter@46e32574, com.daou.api.common.security.filter.CustomAuthenticationFilter@3ce60feb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@402d45c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b37b01e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61f2bf3a, org.springframework.security.web.session.SessionManagementFilter@3bd7829b, org.springframework.security.web.access.ExceptionTranslationFilter@73983f07, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35ec3604]
-[2023-01-08 03:08:55]-[INFO ]-[initHandlerMethods]-Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-[2023-01-08 03:08:56]-[INFO ]-[start]-Tomcat started on port(s): 8080 (http) with context path ''
-[2023-01-08 03:08:56]-[INFO ]-[start]-Context refreshed
-[2023-01-08 03:08:56]-[INFO ]-[start]-Found 1 custom documentation plugin(s)
-[2023-01-08 03:08:56]-[INFO ]-[scan]-Scanning for api listing references
-[2023-01-08 03:08:56]-[INFO ]-[startingWith]-Generating unique operation named: hourlyChurnUserListUsingGET_1
-[2023-01-08 03:08:56]-[INFO ]-[startingWith]-Generating unique operation named: hourlyCostListUsingGET_1
-[2023-01-08 03:08:56]-[INFO ]-[startingWith]-Generating unique operation named: hourlyNewUserListUsingGET_1
-[2023-01-08 03:08:56]-[INFO ]-[startingWith]-Generating unique operation named: hourlyPayAmountUserListUsingGET_1
-[2023-01-08 03:08:56]-[INFO ]-[startingWith]-Generating unique operation named: hourlySalesAmountListUsingGET_1
-[2023-01-08 03:08:56]-[INFO ]-[logStarted]-Started ApiApplication in 5.755 seconds (JVM running for 6.018)
-[2023-01-08 03:08:59]-[INFO ]-[shutDownGracefully]-Commencing graceful shutdown. Waiting for active requests to complete
-[2023-01-08 03:08:59]-[INFO ]-[doShutdown]-Graceful shutdown complete
-[2023-01-08 03:09:00]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
-[2023-01-08 03:09:00]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
-[2023-01-08 03:09:00]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 19:20:23]-[INFO ]-[shutDownGracefully]-Commencing graceful shutdown. Waiting for active requests to complete
+[2023-01-08 19:20:23]-[INFO ]-[doShutdown]-Graceful shutdown complete
+[2023-01-08 19:20:23]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:20:23]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 19:20:23]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 19:20:26]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 44556 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 19:20:27]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 19:20:27]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 19:20:27]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
+[2023-01-08 19:20:28]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
+[2023-01-08 19:20:28]-[INFO ]-[log]-Starting service [Tomcat]
+[2023-01-08 19:20:28]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
+[2023-01-08 19:20:28]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
+[2023-01-08 19:20:28]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1328 ms
+[2023-01-08 19:20:28]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 19:20:28]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 19:20:29]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 19:20:29]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 19:20:29]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 19:20:29]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 19:20:29]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 19:20:29]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:20:30]-[INFO ]-[<init>]-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b43eb71, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f32fe68, org.springframework.security.web.context.SecurityContextPersistenceFilter@48a32c4f, org.springframework.security.web.header.HeaderWriterFilter@4b55652a, org.springframework.security.web.authentication.logout.LogoutFilter@1f612968, com.daou.api.common.filter.JwtFilter@1007954a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21a1554, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f359e65, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10770c1, org.springframework.security.web.session.SessionManagementFilter@7053b64b, org.springframework.security.web.access.ExceptionTranslationFilter@627f678d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42d4de20]
+[2023-01-08 19:20:30]-[INFO ]-[initHandlerMethods]-Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2023-01-08 19:20:31]-[INFO ]-[start]-Tomcat started on port(s): 8080 (http) with context path ''
+[2023-01-08 19:20:31]-[INFO ]-[start]-Context refreshed
+[2023-01-08 19:20:31]-[INFO ]-[start]-Found 1 custom documentation plugin(s)
+[2023-01-08 19:20:31]-[INFO ]-[scan]-Scanning for api listing references
+[2023-01-08 19:20:31]-[INFO ]-[startingWith]-Generating unique operation named: hourlyChurnUserListUsingGET_1
+[2023-01-08 19:20:31]-[INFO ]-[startingWith]-Generating unique operation named: hourlyCostListUsingGET_1
+[2023-01-08 19:20:31]-[INFO ]-[startingWith]-Generating unique operation named: hourlyNewUserListUsingGET_1
+[2023-01-08 19:20:31]-[INFO ]-[startingWith]-Generating unique operation named: hourlyPayAmountUserListUsingGET_1
+[2023-01-08 19:20:31]-[INFO ]-[startingWith]-Generating unique operation named: hourlySalesAmountListUsingGET_1
+[2023-01-08 19:20:31]-[INFO ]-[logStarted]-Started ApiApplication in 5.648 seconds (JVM running for 5.868)
+[2023-01-08 19:20:36]-[INFO ]-[log]-Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x00{0x010x000x00w0x030x03\0xd60xe9sr0x1a~0xd7|0x1c0xdbCxv50xf5w0xe90x950xbfVZ0xa40xde0x850xff0xd70x12v0xc80xf60x8b0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x0040x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x100x000x0e0x040x010x040x030x020x010x020x030x040x010x050x010x060x010xff0x010x000x010x00...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-01-08 19:20:37]-[INFO ]-[log]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-01-08 19:20:37]-[INFO ]-[initServletBean]-Initializing Servlet 'dispatcherServlet'
+[2023-01-08 19:20:37]-[INFO ]-[initServletBean]-Completed initialization in 1 ms
+[2023-01-08 19:20:58]-[INFO ]-[shutDownGracefully]-Commencing graceful shutdown. Waiting for active requests to complete
+[2023-01-08 19:20:58]-[INFO ]-[doShutdown]-Graceful shutdown complete
+[2023-01-08 19:20:58]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:20:58]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 19:20:58]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 19:21:00]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 44615 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 19:21:01]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 19:21:01]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 19:21:01]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 33 ms. Found 6 JPA repository interfaces.
+[2023-01-08 19:21:02]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
+[2023-01-08 19:21:02]-[INFO ]-[log]-Starting service [Tomcat]
+[2023-01-08 19:21:02]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
+[2023-01-08 19:21:02]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
+[2023-01-08 19:21:02]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1398 ms
+[2023-01-08 19:21:02]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 19:21:02]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 19:21:03]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 19:21:03]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 19:21:03]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 19:21:03]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 19:21:03]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 19:21:03]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:21:04]-[INFO ]-[<init>]-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a59d584, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60abe420, org.springframework.security.web.context.SecurityContextPersistenceFilter@7053b64b, org.springframework.security.web.header.HeaderWriterFilter@625430f8, org.springframework.security.web.authentication.logout.LogoutFilter@79690a0a, com.daou.api.common.filter.JwtFilter@21e60eed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6eac71db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48a32c4f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b43eb71, org.springframework.security.web.session.SessionManagementFilter@6f13ed1, org.springframework.security.web.access.ExceptionTranslationFilter@4283f29b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4075c0d8]
+[2023-01-08 19:21:04]-[INFO ]-[initHandlerMethods]-Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2023-01-08 19:21:05]-[INFO ]-[start]-Tomcat started on port(s): 8080 (http) with context path ''
+[2023-01-08 19:21:05]-[INFO ]-[start]-Context refreshed
+[2023-01-08 19:21:05]-[INFO ]-[start]-Found 1 custom documentation plugin(s)
+[2023-01-08 19:21:05]-[INFO ]-[scan]-Scanning for api listing references
+[2023-01-08 19:21:05]-[INFO ]-[startingWith]-Generating unique operation named: hourlyChurnUserListUsingGET_1
+[2023-01-08 19:21:05]-[INFO ]-[startingWith]-Generating unique operation named: hourlyCostListUsingGET_1
+[2023-01-08 19:21:05]-[INFO ]-[startingWith]-Generating unique operation named: hourlyNewUserListUsingGET_1
+[2023-01-08 19:21:05]-[INFO ]-[startingWith]-Generating unique operation named: hourlyPayAmountUserListUsingGET_1
+[2023-01-08 19:21:05]-[INFO ]-[startingWith]-Generating unique operation named: hourlySalesAmountListUsingGET_1
+[2023-01-08 19:21:05]-[INFO ]-[logStarted]-Started ApiApplication in 5.658 seconds (JVM running for 5.923)
+[2023-01-08 19:21:12]-[INFO ]-[log]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-01-08 19:21:12]-[INFO ]-[initServletBean]-Initializing Servlet 'dispatcherServlet'
+[2023-01-08 19:21:12]-[INFO ]-[initServletBean]-Completed initialization in 1 ms
+[2023-01-08 19:21:44]-[INFO ]-[shutDownGracefully]-Commencing graceful shutdown. Waiting for active requests to complete
+[2023-01-08 19:21:44]-[INFO ]-[doShutdown]-Graceful shutdown complete
+[2023-01-08 19:21:44]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:21:44]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 19:21:44]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 19:21:47]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 44705 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 19:21:47]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 19:21:47]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 19:21:48]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+[2023-01-08 19:21:48]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
+[2023-01-08 19:21:48]-[INFO ]-[log]-Starting service [Tomcat]
+[2023-01-08 19:21:48]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
+[2023-01-08 19:21:48]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
+[2023-01-08 19:21:49]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1404 ms
+[2023-01-08 19:21:49]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 19:21:49]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 19:21:49]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 19:21:49]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 19:21:49]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 19:21:49]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 19:21:50]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 19:21:50]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:21:51]-[INFO ]-[<init>]-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c5e2a44, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ef585bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@76d4e1af, org.springframework.security.web.header.HeaderWriterFilter@71739267, org.springframework.security.web.authentication.logout.LogoutFilter@4945cd1f, com.daou.api.common.filter.JwtFilter@4caca86d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f111e97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35d44cd3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bf2c697, org.springframework.security.web.session.SessionManagementFilter@72499396, org.springframework.security.web.access.ExceptionTranslationFilter@27e42fe8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e11d73c]
+[2023-01-08 19:21:51]-[INFO ]-[initHandlerMethods]-Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2023-01-08 19:21:51]-[INFO ]-[start]-Tomcat started on port(s): 8080 (http) with context path ''
+[2023-01-08 19:21:51]-[INFO ]-[start]-Context refreshed
+[2023-01-08 19:21:51]-[INFO ]-[start]-Found 1 custom documentation plugin(s)
+[2023-01-08 19:21:51]-[INFO ]-[scan]-Scanning for api listing references
+[2023-01-08 19:21:51]-[INFO ]-[startingWith]-Generating unique operation named: hourlyChurnUserListUsingGET_1
+[2023-01-08 19:21:52]-[INFO ]-[startingWith]-Generating unique operation named: hourlyCostListUsingGET_1
+[2023-01-08 19:21:52]-[INFO ]-[startingWith]-Generating unique operation named: hourlyNewUserListUsingGET_1
+[2023-01-08 19:21:52]-[INFO ]-[startingWith]-Generating unique operation named: hourlyPayAmountUserListUsingGET_1
+[2023-01-08 19:21:52]-[INFO ]-[startingWith]-Generating unique operation named: hourlySalesAmountListUsingGET_1
+[2023-01-08 19:21:52]-[INFO ]-[logStarted]-Started ApiApplication in 5.559 seconds (JVM running for 5.788)
+[2023-01-08 19:22:02]-[INFO ]-[log]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-01-08 19:22:02]-[INFO ]-[initServletBean]-Initializing Servlet 'dispatcherServlet'
+[2023-01-08 19:22:02]-[INFO ]-[initServletBean]-Completed initialization in 1 ms
+[2023-01-08 19:22:16]-[INFO ]-[preHandle]-REQUEST [5717dc7a-47ef-47cc-957d-cdafa300dfeb] [REQUEST] [/api/user/login] [com.daou.api.controller.UserController#logIn(UserRequestDto)] 
+[2023-01-08 19:22:17]-[INFO ]-[monitorApiPerformanceTime]-start = 1673173337105, end = 1673173337393, processTime = 288ms
+[2023-01-08 19:22:17]-[INFO ]-[postHandle]-POST HANDLE null
+[2023-01-08 19:22:17]-[INFO ]-[afterCompletion]-RESPONSE [5717dc7a-47ef-47cc-957d-cdafa300dfeb] [REQUEST] [com.daou.api.controller.UserController#logIn(UserRequestDto)]
+[2023-01-08 19:22:38]-[INFO ]-[preHandle]-REQUEST [0d7dfdc0-55af-4d5d-88ee-16c02cbc7be4] [REQUEST] [/api/hourly/churn-user] [com.daou.api.controller.HourlyController#hourlyChurnUserList(SearchConditionDto, Pageable)] 
+[2023-01-08 19:22:38]-[INFO ]-[monitorApiPerformanceTime]-start = 1673173358703, end = 1673173358743, processTime = 40ms
+[2023-01-08 19:22:38]-[INFO ]-[postHandle]-POST HANDLE null
+[2023-01-08 19:22:38]-[INFO ]-[afterCompletion]-RESPONSE [0d7dfdc0-55af-4d5d-88ee-16c02cbc7be4] [REQUEST] [com.daou.api.controller.HourlyController#hourlyChurnUserList(SearchConditionDto, Pageable)]
+[2023-01-08 19:23:27]-[INFO ]-[shutDownGracefully]-Commencing graceful shutdown. Waiting for active requests to complete
+[2023-01-08 19:23:27]-[INFO ]-[doShutdown]-Graceful shutdown complete
+[2023-01-08 19:23:27]-[INFO ]-[destroy]-Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:23:27]-[INFO ]-[close]-HikariPool-1 - Shutdown initiated...
+[2023-01-08 19:23:27]-[INFO ]-[close]-HikariPool-1 - Shutdown completed.
+[2023-01-08 19:23:30]-[INFO ]-[logStarting]-Starting ApiApplication using Java 11.0.15 on baghyeonbin-ui-Macmini.local with PID 44892 (/Users/phb/Desktop/test_scheduler_api/api/out/production/classes started by phb in /Users/phb/Desktop/test_scheduler_api)
+[2023-01-08 19:23:30]-[INFO ]-[logStartupProfileInfo]-No active profile set, falling back to 1 default profile: "default"
+[2023-01-08 19:23:31]-[INFO ]-[registerRepositoriesIn]-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-01-08 19:23:31]-[INFO ]-[registerRepositoriesIn]-Finished Spring Data repository scanning in 31 ms. Found 6 JPA repository interfaces.
+[2023-01-08 19:23:32]-[INFO ]-[initialize]-Tomcat initialized with port(s): 8080 (http)
+[2023-01-08 19:23:32]-[INFO ]-[log]-Starting service [Tomcat]
+[2023-01-08 19:23:32]-[INFO ]-[log]-Starting Servlet engine: [Apache Tomcat/9.0.69]
+[2023-01-08 19:23:32]-[INFO ]-[log]-Initializing Spring embedded WebApplicationContext
+[2023-01-08 19:23:32]-[INFO ]-[prepareWebApplicationContext]-Root WebApplicationContext: initialization completed in 1456 ms
+[2023-01-08 19:23:32]-[INFO ]-[logPersistenceUnitInformation]-HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-01-08 19:23:32]-[INFO ]-[logVersion]-HHH000412: Hibernate ORM core version 5.6.14.Final
+[2023-01-08 19:23:32]-[INFO ]-[<clinit>]-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-01-08 19:23:33]-[INFO ]-[getConnection]-HikariPool-1 - Starting...
+[2023-01-08 19:23:33]-[INFO ]-[getConnection]-HikariPool-1 - Start completed.
+[2023-01-08 19:23:33]-[INFO ]-[<init>]-HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2023-01-08 19:23:33]-[INFO ]-[initiateService]-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-01-08 19:23:33]-[INFO ]-[buildNativeEntityManagerFactory]-Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-01-08 19:23:34]-[INFO ]-[<init>]-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28ab7ffb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47a05ad8, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b9ce7a3, org.springframework.security.web.header.HeaderWriterFilter@3638a852, org.springframework.security.web.authentication.logout.LogoutFilter@4ce9985f, com.daou.api.common.filter.JwtFilter@5b3427c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a9e44ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f8e1096, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5275d709, org.springframework.security.web.session.SessionManagementFilter@219bad15, org.springframework.security.web.access.ExceptionTranslationFilter@7e729046, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@29a51ff1]
+[2023-01-08 19:23:34]-[INFO ]-[initHandlerMethods]-Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2023-01-08 19:23:35]-[INFO ]-[start]-Tomcat started on port(s): 8080 (http) with context path ''
+[2023-01-08 19:23:35]-[INFO ]-[start]-Context refreshed
+[2023-01-08 19:23:35]-[INFO ]-[start]-Found 1 custom documentation plugin(s)
+[2023-01-08 19:23:35]-[INFO ]-[scan]-Scanning for api listing references
+[2023-01-08 19:23:35]-[INFO ]-[startingWith]-Generating unique operation named: hourlyChurnUserListUsingGET_1
+[2023-01-08 19:23:35]-[INFO ]-[startingWith]-Generating unique operation named: hourlyCostListUsingGET_1
+[2023-01-08 19:23:35]-[INFO ]-[startingWith]-Generating unique operation named: hourlyNewUserListUsingGET_1
+[2023-01-08 19:23:35]-[INFO ]-[startingWith]-Generating unique operation named: hourlyPayAmountUserListUsingGET_1
+[2023-01-08 19:23:35]-[INFO ]-[startingWith]-Generating unique operation named: hourlySalesAmountListUsingGET_1
+[2023-01-08 19:23:35]-[INFO ]-[logStarted]-Started ApiApplication in 5.835 seconds (JVM running for 6.061)

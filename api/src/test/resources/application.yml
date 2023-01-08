@@ -33,10 +33,9 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
----
 auth:
-  allowIp: 127.8.8.8,1.2.3.4,127.0.0.1
----
+  allowIp: 127.8.8.8,1.2.3.4,127.0.0.*
+
 slack:
   token: xoxb-3971347691442-4482065644323-CmhiHVZfCblWzhEeDq0GOTtk
   channel:
@@ -45,3 +44,8 @@ slack:
 # graceful shutdown (immediate 옵션도 존재하는 해당 옵션은 디폴트이며 말 그대로 즉시 종료이다.)
 server:
   shutdown: graceful
+
+jwt:
+  secret-key: ZGFvdS10ZXN0LWp3dC1hdXRoZW50aWZpY2F0aW9uLXVzZXItb25seS1wYXNzLWF1dGgtcGxlYXNlLWdvLXdsbC1wbGVhc2UtMjM1aHMK
+  ACCESS_TOKEN_EXPIRE_SEC: 3600000   # 1 hour
+  refresh-token-expire-sec: 86400000  # 1 day

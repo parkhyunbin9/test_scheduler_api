@@ -15,6 +15,7 @@ public class RateLimitBucketManager {
 
 	private final Bucket bucket;
 
+	
 	public RateLimitBucketManager() {
 		// 1분에 10개 요청 처리  bucket
 		Bandwidth limit = Bandwidth.classic(10, Refill.greedy(10, Duration.ofMinutes(1)));

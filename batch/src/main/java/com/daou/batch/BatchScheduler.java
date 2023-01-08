@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class BatchScheduler {
 
-	final LocalDate batchDate = LocalDate.now().minusDays(12);
+	final LocalDate batchDate = LocalDate.now();
 	private final JobLauncher launcher;
 	private final LoadFileAndSaveConfiguration loadFileAndSave;
 	private final CleanHourlyDataConfiguration cleanHourlyData;
@@ -43,7 +43,7 @@ public class BatchScheduler {
 	private final RollBackConfiguration rollback;
 	private final SlackService slackService;
 
-	@Scheduled(cron = "0 0/2 * * * ?")
+	@Scheduled(cron = "0 0 0 * * *")
 	public void runJob() {
 		JobParameters jobParam = new JobParametersBuilder().addString("batchDate", batchDate.toString())
 			.toJobParameters();
@@ -74,6 +74,7 @@ public class BatchScheduler {
 		} catch (JobExecutionAlreadyRunningException | JobInstanceAlreadyCompleteException |
 				 JobParametersInvalidException |
 				 JobRestartException e) {
+
 			log.error("Job 수행중 에러 발생 ", e);
 			slackService.postError(e.getMessage(), Arrays.toString(e.getStackTrace()));
 		} catch (Exception e) {

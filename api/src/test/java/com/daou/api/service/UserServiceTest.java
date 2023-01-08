@@ -51,7 +51,7 @@ class UserServiceTest {
 		User expectUser = null;
 		when(userRepository.findByUsernameAndPassword(testData.getUsername(), testData.getPassword())).thenReturn(
 			expectUser);
-		;
+		
 		//then
 		assertThatThrownBy(() -> userService.findByUsernameAndPassword(testData))
 			.isInstanceOf(CommonException.class);

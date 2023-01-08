@@ -57,3 +57,5 @@ server:
 
 jwt:
   secret-key: ZGFvdS10ZXN0LWp3dC1hdXRoZW50aWZpY2F0aW9uLXVzZXItb25seS1wYXNzLWF1dGgtcGxlYXNlLWdvLXdsbC1wbGVhc2UtMjM1aHMK
+  ACCESS_TOKEN_EXPIRE_SEC: 3600000   # 1 hour
+  refresh-token-expire-sec: 86400000  # 1 day

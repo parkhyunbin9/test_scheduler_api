@@ -95,11 +95,6 @@ public class CleanHourlyDataConfiguration {
 
 	@Bean(JOB_NAME + WRITER)
 	public JpaItemWriter<HourlyData> writer() {
-		// JPAItemWriter 에서 성능 문제가 있다.
-		// write 할때 항상 모든 아이템을 entitymanager.merge()를 동작시킨다.
-		// entityManager의 merge는
-		// 처음 데이터를 넣을때도 항상 update 쿼리도 한번 더 날라가서
-		// INSERT 1번 + UPDATE 1번 총 2번의 동작이 일어난다.
 		JpaItemWriter<HourlyData> jpaItemWriter = new JpaItemWriter<>();
 		jpaItemWriter.setUsePersist(true);
 		jpaItemWriter.setEntityManagerFactory(entityManagerFactory);

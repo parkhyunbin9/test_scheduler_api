@@ -32,8 +32,6 @@ public class SlackService {
 				.build();
 
 			methods.chatPostMessage(request);
-
-			log.info("보냄");
 		} catch (SlackApiException | IOException e) {
 			log.error(e.getMessage());
 		}

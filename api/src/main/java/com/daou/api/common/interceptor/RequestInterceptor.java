@@ -24,9 +24,8 @@ public class RequestInterceptor implements HandlerInterceptor {
 
 		request.setAttribute(LOG_ID, uuid);
 
-		// @RequestMapping -> handleMethod
 		if (handler instanceof HandlerMethod) {
-			HandlerMethod handlerMethod = (HandlerMethod)handler; // 호출할 컨트롤러 메서드의 정보
+			HandlerMethod handlerMethod = (HandlerMethod)handler;
 		}
 		log.info("REQUEST [{}] [{}] [{}] [{}] ", uuid, request.getDispatcherType(), requestURI,
 			handler);

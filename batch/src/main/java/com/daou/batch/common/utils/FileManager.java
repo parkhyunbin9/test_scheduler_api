@@ -31,10 +31,8 @@ public class FileManager {
 	public void zipOriginFile() throws IOException {
 		String allFilePath = readPath + "/*.*";
 		File saveFile = new File(filePath + "/success/" +
-			//Paths.get(filePath, "success",
 			LoadFileAndSaveConfiguration.TX_DATE + ".zip");
-		log.info(String.valueOf(saveFile.getAbsoluteFile()));
-		log.info(saveFile.getPath());
+
 		PathMatchingResourcePatternResolver pathResolver = new PathMatchingResourcePatternResolver();
 		Resource[] resources = pathResolver.getResources(allFilePath);
 		try (final FileOutputStream fos = new FileOutputStream(saveFile, true);
